@@ -54,10 +54,10 @@
     <column id="COL14" populated="true" UUID="209fe4b5-eec7-4ed9-a9a4-896e2f908997" autoIncrement="false" autoIncrementSequenceName="NOTICIA_New Column_seq" defaultValue="" name="TEXTO" nullable="0" physicalName="TEXTO" precision="3000" referenceCount="6" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL15" populated="true" UUID="a9f2c6ca-774b-4704-acd4-dde5e90cebcf" autoIncrement="false" autoIncrementSequenceName="EVENTO_DATA_PUBLICACAO_seq" defaultValue="CURRENT_TIMESTAMP" name="DATA_PUBLICACAO" nullable="0" physicalName="DATA_PUBLICACAO" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+    <column id="COL15" populated="true" UUID="28578114-3d0e-4293-97cd-1092a9a49804" autoIncrement="false" autoIncrementSequenceName="EVENTO_IMAGEM_seq" defaultValue="" name="IMAGEM" nullable="1" physicalName="IMAGEM" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL16" populated="true" UUID="28578114-3d0e-4293-97cd-1092a9a49804" autoIncrement="false" autoIncrementSequenceName="EVENTO_IMAGEM_seq" defaultValue="" name="IMAGEM" nullable="0" physicalName="IMAGEM" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL16" populated="true" UUID="a9f2c6ca-774b-4704-acd4-dde5e90cebcf" autoIncrement="false" autoIncrementSequenceName="EVENTO_DATA_PUBLICACAO_seq" defaultValue="CURRENT_TIMESTAMP" name="DATA_PUBLICACAO" nullable="0" physicalName="DATA_PUBLICACAO" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
      <remarks></remarks>
     </column>
     <column id="COL17" populated="true" UUID="a7b1173f-6762-4e0b-ab69-259255b40a0a" autoIncrement="false" autoIncrementSequenceName="EVENTO_ID_USUARIO_seq" defaultValue="" name="ID_USUARIO" nullable="0" physicalName="ID_USUARIO" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >

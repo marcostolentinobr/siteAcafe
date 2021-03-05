@@ -22,12 +22,7 @@ if ($this->Model->buscarCampos) {
             </td>
             <td><?= campo(reticencias($dado['TEXTO'], 50)) ?></td>
             <td><?= campo($dado['DATA_PUBLICACAO'], 'DM') ?></td>
-            <td>
-                <?
-                $arqNome = array_values(mArquivosListar(RAIZ . "/arquivos/{$dado['ID_EVENTO']}_", false, false))[0]['basename'];
-                ?>
-                <a target="_blank" href="<?= URL . "arquivos/$arqNome" ?>">Abrir</a>
-            </td>
+            <td><a target="_blank" href="<?= URL . "arquivos/$dado[IMAGEM]" ?>">Abrir</a></td>
             <td><? require __DIR__ . '/../tamplateBotoes.php' ?></td>
         </tr>
     <? } ?>

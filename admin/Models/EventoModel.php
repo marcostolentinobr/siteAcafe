@@ -21,10 +21,6 @@ class EventoModel extends Model {
         $this->dado['TEXTO'] = campo($dado['TEXTO']);
         $this->campoValidacao('TEXTO', 3000);
         
-        //CATEGORIA obrigatorio
-        $this->dado['IMAGEM'] = campo(date('Ymd_His'));
-        $this->campoValidacao('IMAGEM');
-
         //ID_USUARIO obrigatório
         $this->dado['ID_USUARIO'] = getSession('ID_USUARIO');
         $this->campoValidacao('ID_USUARIO');

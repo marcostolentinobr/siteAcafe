@@ -22,6 +22,6 @@
 
 <?
 if ($this->acaoDescricaoPost == 'Editar') {
-    echo '<small style="color:red">Para ver ou editar arquivos clique no título do evento</small><br>';
+    echo "<img src='" . URL . "/arquivos/{$this->dado['IMAGEM']}'>";
 }
 ?>

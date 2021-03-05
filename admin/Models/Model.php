@@ -78,7 +78,7 @@ class Model {
                 @$whereBuscar[] = " $campo LIKE '%$buscar%'";
             }
         }
-        
+
         if ($this->paginacao) {
             if (isset($whereBuscar)) {
                 $whereBuscar = implode(' OR ', $whereBuscar);
@@ -121,9 +121,9 @@ class Model {
         return $this->prepareExecute($sql, $valores);
     }
 
-    public function alterar() {
-        $where = [$this->chave => $_POST[$this->chave]];
-        $dado = coalesce($this->dado, $this->dado($_POST, __METHOD__));
+    public function alterar($where = [], $dado = []) {
+        $where = coalesce($where, [$this->chave => $_POST[$this->chave]]);
+        $dado = coalesce($dado, $this->dado, $this->dado($_POST, __METHOD__));
         $dadoAlterar = $this->dadosQry(false, $dado);
         $whereAlterar = $this->dadosQry(false, $where);
         $sql = "UPDATE $this->tabela SET " . implode(", ", $dadoAlterar['sintaxe']);

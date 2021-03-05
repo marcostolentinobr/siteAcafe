@@ -21,8 +21,13 @@ class Evento extends Controller {
 
             foreach ($ARQ['name'] as $ind => $nome) {
                 $extencao = strtolower(pathinfo($nome, PATHINFO_EXTENSION));
-                $arq_local = RAIZ . "/arquivos/{$chave}_" . $this->dado['IMAGEM'] . ".$extencao";
-                if (!move_uploaded_file($ARQ['tmp_name'][$ind], $arq_local)) {
+                $arqNome = "$chave.$extencao";
+                $arq_local = RAIZ . "/arquivos/$arqNome";
+                $this->ok = move_uploaded_file($ARQ['tmp_name'][$ind], $arq_local);
+                if ($this->ok) {
+                    $this->ok = $this->Model->alterar(['ID_EVENTO' => $chave], ['IMAGEM' => $arqNome]);
+                }
+                if (!$this->ok) {
                     echo 'Rever o upload da imagem';
                 }
             }
@@ -40,7 +45,7 @@ class Evento extends Controller {
     }
 
     protected function executaPosAcao() {
-        $this->dado['IMAGEM'] = @$this->Model->getDados()['IMAGEM'];
+        $this->dado['IMAGEM'] = coalesce($this->dado['IMAGEM'],@$this->Model->getDados()['IMAGEM']);
     }
 
     public function tamplateLista() {
