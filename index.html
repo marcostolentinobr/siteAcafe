@@ -395,7 +395,7 @@
                                 criadas no Estado de Santa Catarina por lei dos poderes públicos estaduais e municipais. 
                                 O objetivo desta união é promover o intercâmbio administrativo, técnico e científico 
                                 entre as Instituições de Educação Superior.<br>
-                                <a rel="nofollow" href="https://new.acafe.org.br/quem-somos/" target="_blank">Ler mais</a>
+                                <a rel="nofollow" data-valor="sobre" style="cursor: pointer" id="sobre">Ler mais</a>
                             </div>
 
                         </div> <!-- /.service-item -->
@@ -464,7 +464,7 @@
                                 lucrativos, com a missão de promover a integração dos esforços de consolidação das instituições
                                 de ensino superior por elas mantidas, de executar atividades de suporte técnico-operacional e de
                                 representá-las junto aos órgãos dos Governos Estadual e Federal.
-                                <br><a rel="nofollow" href="https://new.acafe.org.br/memoria/" target="_blank">Ler mais</a>
+                                <br><a rel="nofollow" style="cursor: pointer" data-valor="memoria" id="memoria">Ler mais</a>
                             </div>
 
                         </div> <!-- /.service-item -->
@@ -542,7 +542,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-sm-8 col-xs-12">
-                        <a style="display: inline; text-decoration: underline; cursor: pointer" id="camara">Câmaras Setoriais</a> |
+                        <a style="display: inline; text-decoration: underline; cursor: pointer" data-valor="camaras" id="camara">Câmaras Setoriais</a> |
                         <a style="display: inline; text-decoration: underline" target="_blank" href="documentos/estatuto.pdf">Estatuto</a> |
                         <a style="display: inline; text-decoration: underline" target="_blank" href="https://acafe.org.br/portal">Portais</a> |
                         <a style="display: inline; text-decoration: underline" target="_blank" href="https://webmail.acafe.org.br">Webmail</a>
@@ -568,7 +568,8 @@
 
             $(document).ready(function () {
 
-                $("#camara").click(function () {
+                $("#camara, #sobre, #memoria").click(function () {
+                    var pagina = $(this).data('valor');
 
                     $('#noticia').hide();
                     $('#portfolio').hide();
@@ -576,7 +577,7 @@
                     $('#ies-img').hide();
                     $('#acafe').hide();
                     $('#camara-section').show();
-                    $('#camara-section').load("paginas/sobre.html");
+                    $('#camara-section').load("paginas/" + pagina + ".html");
                     jQuery('html,body').animate({
                         scrollTop: ($("#camara-section").offset().top) - 100
                     }, 'slow');
