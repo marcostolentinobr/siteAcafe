@@ -1,5 +1,6 @@
 <? require_once 'config.php' ?>
-
+<title><?= TITULO ?></title>
+<link rel="shortcut icon" href="../imagens/favicon.ico">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <style>
     label {
@@ -10,7 +11,7 @@
     select, textarea, input[type=text] {
         width: 100%;        
     }
-    
+
     input[type=submit] {
         width: 55px;        
     }
@@ -31,7 +32,7 @@
     <BR>
     <a href="<?= URL ?>Index">INÍCIO</a> |
     <? if (isset($_SESSION['USUARIO'])) { ?>
-        <a href="<?= URL ?>Evento/listar">EVENTO</a> |
+        <a href="<?= URL ?>Evento/listar">EVENTOS</a> |
         <?
         echo '
             <small 

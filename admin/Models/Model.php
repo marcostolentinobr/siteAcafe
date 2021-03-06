@@ -8,7 +8,7 @@ class Model {
     protected $erro;
     public $linhasTotal;
     public $linhasTotalMomento;
-    public $pagina_total = 3;
+    public $pagina_total = 8;
     public $buscarCampos = [];
     public $paginacao = true;
 
@@ -133,6 +133,7 @@ class Model {
 
     public function listar($valores = [], $todos = false) {
         $sql = "SELECT *, 0 AS ITEM_UTILIZADO FROM $this->tabela";
+        $this->addOrder($this->chave . ' DESC ');
         return $this->listarRetorno($sql, $valores, $todos);
     }
 

@@ -43,7 +43,8 @@ class Evento extends Controller {
     }
 
     public function detalhe() {
-        $this->dado = $this->Model->listar($this->where, true)[0];
+        $this->mostrarDescricaoAcao = false;
+        $this->dado = $this->Model->listar([$this->ID_CHAVE => CHAVE], true)[0];
         $this->requireForm('detalhe', 'Detalhe', false);
     }
 

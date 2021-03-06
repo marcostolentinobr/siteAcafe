@@ -6,13 +6,16 @@ if ($this->Model->buscarCampos) {
 <table border="1" style="width: 100%">
     <tr>
         <th>Notícia</th>
-        <th>Ações</th>
+        <th style="width: 1%" >Ações</th>
     </tr>
     <? while ($dado = $this->qry->fetch(PDO::FETCH_ASSOC)) { ?>
         <tr>
             <td>
-                <a style="font-size: 17px; color: black" href="<?= URL . "Evento/detalhe/" . $dado['ID_EVENTO'] ?>">
-                    <?= $dado['TITULO'] ?>
+                <a style="font-size: 17px; color: black" 
+                   href="<?= URL . "Evento/detalhe/" . $dado['ID_EVENTO'] ?>"
+                   title="<?= $dado['TITULO'] ?>"
+                   >
+                       <?= reticencias($dado['TITULO'], 22) ?>
                 </a>
                 <br>
                 <small>

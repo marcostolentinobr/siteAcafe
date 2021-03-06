@@ -1,5 +1,5 @@
 <h2><?= $this->dado['TITULO'] ?></h2>
-<img style='width: 255px; height: 200px' src='<?= URL . "/arquivos/{$this->dado['IMAGEM']}" ?>' ><br>
+<img style='max-width: 255px; max-height: 200px' src='<?= URL . "arquivos/{$this->dado['IMAGEM']}" ?>' ><br>
 <div style="border: 0px solid; text-align: left; width: <?= $this->listarLargura ?>px">    
     <small>
         <b><?= $this->dado['CATEGORIA'] ?> </b> 

@@ -15,7 +15,7 @@
                 ?>
             </td>
         <? } ?>
-        <td style="padding-left: 10px">
+        <td style="padding-left: 10px; min-width: <?= $this->formularioLargura ?>px">
             <? require_once 'tamplateFormulario.php' ?>
         </td>
     </tr>

@@ -9,19 +9,19 @@ class EventoModel extends Model {
     //DADOS
     protected function dado($dado, $metodo = __METHOD__) {
 
-        //CATEGORIA obrigatorio
+        //CATEGORIA 
         $this->dado['CATEGORIA'] = campo($dado['CATEGORIA']);
         $this->campoValidacao('CATEGORIA');
-        
-        //TITULO obrigatorio 100
-        $this->dado['TITULO'] = campo($dado['TITULO']);
-        $this->campoValidacao('TITULO');
 
-        //TEXTO obrigatorio 3000
+        //TITULO
+        $this->dado['TITULO'] = campo($dado['TITULO']);
+        $this->campoValidacao('TITULO', 150);
+
+        //TEXTO 
         $this->dado['TEXTO'] = campo($dado['TEXTO']);
-        $this->campoValidacao('TEXTO', 3000);
-        
-        //ID_USUARIO obrigatório
+        $this->campoValidacao('TEXTO', 8000);
+
+        //ID_USUARIO 
         $this->dado['ID_USUARIO'] = getSession('ID_USUARIO');
         $this->campoValidacao('ID_USUARIO');
 

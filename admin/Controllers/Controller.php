@@ -14,8 +14,10 @@ class Controller {
     protected $ID_CHAVE;
     protected $listarMostrar = true;
     protected $listarLargura = 800;
+    protected $formularioLargura = 490;
     protected $arquivoForm = '';
     protected $botaoFormulario = true;
+    protected $mostrarDescricaoAcao = true;
 
     public function __construct() {
         $this->acao();
