@@ -1,5 +1,5 @@
 <h2 style="text-align: center;"><?= $this->acaoDescricao ?></h2> 
-<form method="POST" enctype="multipart/form-data">
+<form method="POST" enctype="multipart/form-data" action="<?= URL . CLASSE . '/listar' ?>">
     <input type="text" name="<?= $this->ID_CHAVE ?>" value="<?= @$this->dado[$this->ID_CHAVE] ?>" hidden>
     <? require_once __DIR__ . '/' . CLASSE . '/' . strtolower(CLASSE) . "-formulario{$this->arquivoForm}.php"; ?>
     <hr>

@@ -5,24 +5,23 @@ if ($this->Model->buscarCampos) {
 ?>
 <table border="1" style="width: 100%">
     <tr>
-        <th>Categoria</th>
-        <th>Título</th>
-        <th>Texto</th>
-        <th>Data</th>
-        <th>Imagem</th>
+        <th>Notícia</th>
         <th>Ações</th>
     </tr>
     <? while ($dado = $this->qry->fetch(PDO::FETCH_ASSOC)) { ?>
         <tr>
-            <td><?= reticencias($dado['CATEGORIA'], 15) ?></td>
             <td>
-                <a href="<?= URL . "Evento/detalhe/" . $dado['ID_EVENTO'] ?>">
-                    <?= reticencias($dado['TITULO'], 15) ?>
+                <a style="font-size: 17px; color: black" href="<?= URL . "Evento/detalhe/" . $dado['ID_EVENTO'] ?>">
+                    <?= $dado['TITULO'] ?>
                 </a>
+                <br>
+                <small>
+                    <?
+                    echo "<b>$dado[CATEGORIA]</b> publicado(a) em ";
+                    echo dataFormatar($dado['DATA_PUBLICACAO'], 'M');
+                    ?>
+                </small>
             </td>
-            <td><?= campo(reticencias($dado['TEXTO'], 50)) ?></td>
-            <td><?= campo($dado['DATA_PUBLICACAO'], 'DM') ?></td>
-            <td><a target="_blank" href="<?= URL . "arquivos/$dado[IMAGEM]" ?>">Abrir</a></td>
             <td><? require __DIR__ . '/../tamplateBotoes.php' ?></td>
         </tr>
     <? } ?>

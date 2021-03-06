@@ -15,8 +15,8 @@ class Evento extends Controller {
         $this->Model->paginacao = true;
 
         //Caso a ação tenha dado ok e tenha arquivo enviar o arquivo
-        if ($this->ok && @$_FILES['ARQUIVO']['name'][0]) {
-            $ARQ = $_FILES['ARQUIVO'];
+        $ARQ = @$_FILES['IMAGEM'];
+        if ($this->ok && $ARQ['name'][0]) {
             $chave = coalesce(@$this->dado[$this->ID_CHAVE], $this->Model->ultimoInsertId());
 
             foreach ($ARQ['name'] as $ind => $nome) {
@@ -32,20 +32,10 @@ class Evento extends Controller {
                 }
             }
         }
-
-        foreach ($_POST as $dado => $valor) {
-            if (strpos(base64_decode($dado), 'XCLUIR-' . CHAVE) == 1) {
-                $ARQ = str_replace('EXCLUIR-', '', base64_decode($dado));
-                $ARQ_FILE = RAIZ . "/arquivos/" . $ARQ;
-                IF (file_exists($ARQ_FILE)) {
-                    unlink($ARQ_FILE);
-                }
-            }
-        }
     }
 
     protected function executaPosAcao() {
-        $this->dado['IMAGEM'] = coalesce($this->dado['IMAGEM'],@$this->Model->getDados()['IMAGEM']);
+        $this->dado['IMAGEM'] = coalesce(@$this->dado['IMAGEM'], @$this->Model->getDados()['IMAGEM']);
     }
 
     public function tamplateLista() {

@@ -5,9 +5,14 @@
     label {
         font-weight: bold;
         display: block;
+        padding-top: 5px;
     }
-    select, textarea {
-        width: 173px;        
+    select, textarea, input[type=text] {
+        width: 100%;        
+    }
+    
+    input[type=submit] {
+        width: 55px;        
     }
 
     .sublinhadoPontilhadoPointer {

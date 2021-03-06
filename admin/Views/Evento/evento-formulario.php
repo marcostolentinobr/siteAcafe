@@ -1,3 +1,11 @@
+<center>
+    <?
+    if ($this->acaoDescricaoPost == 'Editar') {
+        echo "<img style='height: 100px' src='" . URL . "/arquivos/{$this->dado['IMAGEM']}'>";
+    }
+    ?>
+</center>
+
 <!-- CATEGORIA -->
 <? $campo = ['CATEGORIA', 'Categoria'] ?>
 <label for="<?= $campo[0] ?>"><?= $campo[1] ?>:</label>
@@ -9,19 +17,16 @@
 </select>
 
 <!-- TITULO -->
-<? $campo = ['TITULO', 'Título'] ?>
+<? $campo = ['TITULO', 'Título', 100] ?>
 <label><?= $campo[1] ?>:</label>
-<input id="<?= $campo[0] ?>" name="<?= $campo[0] ?>" value="<?= @$this->dado[$campo[0]] ?>" minlength="1" maxlength="100" required><br>
+<input type="text" id="<?= $campo[0] ?>" name="<?= $campo[0] ?>" value="<?= @$this->dado[$campo[0]] ?>" maxlength="<?= $campo[2] ?>" required><br>
 
 <!-- TEXTO -->
-<? $campo = ['TEXTO', 'Texto'] ?><label><?= $campo[1] ?>:</label>
-<textarea id="<?= $campo[0] ?>" name="<?= $campo[0] ?>" maxlength="1000" required style="height: 100px" ><?= @$this->dado[$campo[0]] ?></textarea>
+<? $campo = ['TEXTO', 'Texto', 3000] ?>
+<label><?= $campo[1] ?>:</label>
+<textarea id="<?= $campo[0] ?>" name="<?= $campo[0] ?>" maxlength="<?= $campo[2] ?>" style="height: 185px" required ><?= @$this->dado[$campo[0]] ?></textarea>
 
-<label style="font-weight: normal">Comprovante de título:</label>
-<input type="file" name="ARQUIVO[]" ><br>
-
-<?
-if ($this->acaoDescricaoPost == 'Editar') {
-    echo "<img src='" . URL . "/arquivos/{$this->dado['IMAGEM']}'>";
-}
-?>
+<!-- IMAGEM -->
+<? $campo = ['IMAGEM[]', 'Imagem <small>em 255px200px</small>'] ?>
+<label><?= $campo[1] ?></label>
+<input type="file" id="<?= $campo[0] ?>" name="<?= $campo[0] ?>" >
