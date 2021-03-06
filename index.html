@@ -145,64 +145,12 @@
                 </div> 
 
                 <div class="row" style="margin: 0; padding: 0">
-                    <div class="our-team" style="margin: 0; padding: 0">
-                        <div class="col-md-3 col-sm-4">
-                            <div class="team-member">
-                                <div class="member-img">
-                                    <img style="max-height: 200px; max-width: 255px" src="admin/arquivos/1.png">
-                                </div>
-                                <div class="inner-content" style="padding-top: 0">
-                                    <small style="font-size: 10px">17/12/2020</small>
-                                    <h5>Nova diretoria</h5>
-                                    <p>ACAFE empossa nova diretoria em cerimônia virtual prestigiada</p>
-                                    <span><a target="_blank" href="https://new.acafe.org.br/portaria-09-2020-calendario-vestibular-inverno-2021-e-verao-2022/">Ler mais</a></span>
-                                </div>
-                            </div> 
-                        </div>
-                        <div class="col-md-3 col-sm-4">
-                            <div class="team-member">
-                                <div class="member-img">
-                                    <img style="max-height: 200px; max-width: 255px"  src="admin/arquivos/3.png">
-                                </div>
-                                <div class="inner-content" style="padding-top: 0">
-                                    <small style="font-size: 10px">03/11/2020</small>
-                                    <h5>PORTARIA 09/2020</h5>
-                                    <p>Calendário Vestibular INVERNO 2021 e VERÃO 2022</p>
-                                    <span><a target="_blank" href="https://new.acafe.org.br/portaria-09-2020-calendario-vestibular-inverno-2021-e-verao-2022/">Ler mais</a></span>
-                                </div>
-                            </div> 
-                        </div> 
-                        <div class="col-md-3 col-sm-4">
-                            <div class="team-member">
-                                <div class="member-img">
-                                    <img style="max-height: 200px; max-width: 255px" src="admin/arquivos/4.png">                                    
-                                </div>
-                                <div class="inner-content" style="padding-top: 0">
-                                    <small style="font-size: 10px">23/09/2020</small>
-                                    <h5>Portaria 07/2020</h5>
-                                    <p>Calendário de atividades do Vestibular ACAFE Verão 2021</p>
-                                    <span><a target="_blank" href="https://new.acafe.org.br/portaria-09-2020-calendario-vestibular-inverno-2021-e-verao-2022/">Ler mais</a></span>
-                                </div>
-                            </div> 
-                        </div>
-                        <div class="col-md-3 col-sm-4">
-                            <div class="team-member">
-                                <div class="member-img">
-                                    <img style="max-height: 200px; max-width: 255px"  src="admin/arquivos/5.png">
-                                </div>
-                                <div class="inner-content" style="padding-top: 0">
-                                    <small style="font-size: 10px">29/07/2020</small>
-                                    <h5>PORTARIA 06/2020</h5>
-                                    <p>PORTARIA 06/2020 - Calendário Vestibular Verão 2021</p>
-                                    <span><a target="_blank" href="https://new.acafe.org.br/portaria-09-2020-calendario-vestibular-inverno-2021-e-verao-2022/">Ler mais</a></span>
-                                </div>
-                            </div> 
-                        </div>
+                    <div class="our-team noticias-lista-4" style="margin: 0; padding: 0">
 
                     </div>
                 </div>
                 <div class="row" style="padding: 0; margin: 0">
-                    <a target="_blank" href="https://new.acafe.org.br/noticias/">Ver todas as notícias</a>
+                    <a target="_blank" style="cursor: pointer" onclick="noticiaTodas()" >Ver todas as notícias</a>
                 </div>
             </div>
         </div>
@@ -566,49 +514,66 @@
         <script src="libs/js/custom.js"></script>
         <script type="text/javascript">
 
-            $(document).ready(function () {
 
-                $("#camara, #sobre, #memoria").click(function () {
-                    var pagina = $(this).data('valor');
+                        function noticiaTodas() {
+                            $('.noticias-lista-4').load("paginas/eventos.php?CATEGORIA=Notícia");
+                            jQuery('html,body').animate({
+                                scrollTop: ($(".noticias-lista-4").offset().top) - 100
+                            }, 'slow');
+                        }
 
-                    $('#noticia').hide();
-                    $('#portfolio').hide();
-                    $('#instituicao').hide();
-                    $('#ies-img').hide();
-                    $('#acafe').hide();
-                    $('#camara-section').show();
-                    $('#camara-section').load("paginas/" + pagina + ".html");
-                    jQuery('html,body').animate({
-                        scrollTop: ($("#camara-section").offset().top) - 100
-                    }, 'slow');
+                        function noticia(pagina) {
+                            $('.noticias-lista-4').load("paginas/eventos.php?CATEGORIA=Notícia&ID_EVENTO=" + pagina);
+                            jQuery('html,body').animate({
+                                scrollTop: ($(".noticias-lista-4").offset().top) - 100
+                            }, 'slow');
+                        }
 
-                });
+                        $(document).ready(function () {
 
-                $(".main-header a").click(function () {
+                            $('.noticias-lista-4').load("paginas/eventos.php?CATEGORIA=Notícia&LIMIT=4");
 
-                    var $ir = $(this).attr('href');
+                            $("#camara, #sobre, #memoria").click(function () {
+                                var pagina = $(this).data('valor');
 
-                    if ($ir != '#') {
-                        $('#noticia').show();
-                        $('#portfolio').show();
-                        $('#instituicao').show();
-                        $('#ies-img').show();
-                        $('#acafe').show();
+                                $('#noticia').hide();
+                                $('#portfolio').hide();
+                                $('#instituicao').hide();
+                                $('#ies-img').hide();
+                                $('#acafe').hide();
+                                $('#camara-section').show();
+                                $('#camara-section').load("paginas/" + pagina + ".html");
+                                jQuery('html,body').animate({
+                                    scrollTop: ($("#camara-section").offset().top) - 100
+                                }, 'slow');
 
-                        $('#camara-section').hide();
+                            });
 
-                        jQuery('html,body').animate({
-                            scrollTop: ($($ir).offset().top) - 100
-                        }, 'slow');
+                            $(".main-header a").click(function () {
 
-                    }
+                                var $ir = $(this).attr('href');
+
+                                if ($ir != '#') {
+                                    $('#noticia').show();
+                                    $('#portfolio').show();
+                                    $('#instituicao').show();
+                                    $('#ies-img').show();
+                                    $('#acafe').show();
+
+                                    $('#camara-section').hide();
+
+                                    jQuery('html,body').animate({
+                                        scrollTop: ($($ir).offset().top) - 100
+                                    }, 'slow');
+
+                                }
 
 
-                });
+                            });
 
 
 
-            });
+                        });
 
         </script>
 

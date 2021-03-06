@@ -133,7 +133,9 @@ class Model {
 
     public function listar($valores = [], $todos = false) {
         $sql = "SELECT *, 0 AS ITEM_UTILIZADO FROM $this->tabela";
-        $this->addOrder($this->chave . ' DESC ');
+        if (!$this->order) {
+            $this->addOrder($this->chave . ' DESC ');
+        }
         return $this->listarRetorno($sql, $valores, $todos);
     }
 
