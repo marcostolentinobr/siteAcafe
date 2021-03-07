@@ -161,64 +161,13 @@
                     <h2>Vestibulares - SUA - Concursos</h2>
                     <span></span>
                 </div> 
-                <div class="row">
-                    <div class="col-md-3 col-sm-4">
-                        <div class="team-member">
-                            <div class="member-img">
-                                <img style="height: 200px; width: 225px" src="imagens/noticia/posse.jpg">
-                            </div>
-                            <div class="inner-content" style="padding-top: 0; color: white">
-                                <small style="font-size: 10px">17/12/2020</small>
-                                <h5 style="color: white; text-decoration: underline">Nova diretoria</h5>
-                                <p>ACAFE empossa nova diretoria em cerimônia virtual prestigiada</p>
-                                <span><a target="_blank" href="https://new.acafe.org.br/portaria-09-2020-calendario-vestibular-inverno-2021-e-verao-2022/">Ler mais</a></span>
-                            </div>
-                        </div> 
-                    </div>
-                    <div class="col-md-3 col-sm-4">
-                        <div class="team-member">
-                            <div class="member-img">
-                                <img style="height: 200px; width: 225px" src="imagens/portaria-vestibular-2021-2022.png">
-                            </div>
-                            <div class="inner-content" style="padding-top: 0; color: white">
-                                <small style="font-size: 10px">03/11/2020</small>
-                                <h5 style="color: white; text-decoration: underline">PORTARIA 09/2020</h5>
-                                <p>Calendário Vestibular INVERNO 2021 e VERÃO 2022</p>
-                                <span><a target="_blank" href="https://new.acafe.org.br/portaria-09-2020-calendario-vestibular-inverno-2021-e-verao-2022/">Ler mais</a></span>
-                            </div>
-                        </div> 
-                    </div> 
-                    <div class="col-md-3 col-sm-4">
-                        <div class="team-member">
-                            <div class="member-img">
-                                <img style="height: 200px; width: 225px" src="imagens/portaria-acafe-2021.png">                                    
-                            </div>
-                            <div class="inner-content" style="padding-top: 0; color: white">
-                                <small style="font-size: 10px">23/09/2020</small>
-                                <h5 style="color: white; text-decoration: underline">Portaria 07/2020</h5>
-                                <p>Calendário de atividades do Vestibular ACAFE Verão 2021</p>
-                                <span><a target="_blank" href="https://new.acafe.org.br/portaria-09-2020-calendario-vestibular-inverno-2021-e-verao-2022/">Ler mais</a></span>
-                            </div>
-                        </div> 
-                    </div>
-                    <div class="col-md-3 col-sm-4">
-                        <div class="team-member">
-                            <div class="member-img">
-                                <img style="height: 200px; width: 225px" src="imagens/calendario.jpg">
-                            </div>
-                            <div class="inner-content" style="padding-top: 0; color: white">
-                                <small style="font-size: 10px">29/07/2020</small>
-                                <h5 style="color: white; text-decoration: underline">PORTARIA 06/2020</h5>
-                                <p>PORTARIA 06/2020 - Calendário Vestibular Verão 2021</p>
-                                <span><a target="_blank" href="https://new.acafe.org.br/portaria-09-2020-calendario-vestibular-inverno-2021-e-verao-2022/">Ler mais</a></span>
-                            </div>
-                        </div> 
-                    </div>
+                <div class="row concurso-lista-4">
+                    
 
                 </div> <!-- /.container -->
                 <div class="row" style="padding: 0; margin: 0">
                     <br>
-                    <a target="_blank" href="https://new.acafe.org.br/vestibulares-e-concursos/">Ver todos os concursos</a>
+                    <a target="_blank"  style="cursor: pointer" onclick="concursoTodas()" >Ver todos os concursos</a>
                 </div>
             </div> <!-- /#portfolio -->
         </div>
@@ -490,10 +439,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-sm-8 col-xs-12">
-                        <a style="display: inline; text-decoration: underline; cursor: pointer" data-valor="camaras" id="camara">Câmaras Setoriais</a> |
-                        <a style="display: inline; text-decoration: underline" target="_blank" href="documentos/estatuto.pdf">Estatuto</a> |
-                        <a style="display: inline; text-decoration: underline" target="_blank" href="https://acafe.org.br/portal">Portais</a> |
-                        <a style="display: inline; text-decoration: underline" target="_blank" href="https://webmail.acafe.org.br">Webmail</a>
+                        <a style="display: inline; text-decoration: none; cursor: pointer" data-valor="camaras" id="camara">Câmaras Setoriais</a> |
+                        <a style="display: inline; text-decoration: none" target="_blank" href="documentos/estatuto.pdf">Estatuto</a> |
+                        <a style="display: inline; text-decoration: none" target="_blank" href="https://acafe.org.br/portal">Portais</a> |
+                        <a style="display: inline; text-decoration: none" target="_blank" href="https://webmail.acafe.org.br">Webmail</a>
                         <p>Sistema ACAFE &copy; 2020. Todos direitos reservados</p>  
                     </div> <!-- /.col-md-6 -->
                     <div class="col-md-4 col-sm-4 col-xs-12">
@@ -514,6 +463,12 @@
         <script src="libs/js/custom.js"></script>
         <script type="text/javascript">
 
+                        function concursoTodas() {
+                            $('.concurso-lista-4').load("paginas/eventos.php?CATEGORIA=*");
+                            jQuery('html,body').animate({
+                                scrollTop: ($(".concurso-lista-4").offset().top) - 100
+                            }, 'slow');
+                        }
 
                         function noticiaTodas() {
                             $('.noticias-lista-4').load("paginas/eventos.php?CATEGORIA=Notícia");
@@ -532,6 +487,7 @@
                         $(document).ready(function () {
 
                             $('.noticias-lista-4').load("paginas/eventos.php?CATEGORIA=Notícia&LIMIT=4");
+                            $('.concurso-lista-4').load("paginas/eventos.php?CATEGORIA=*&LIMIT=4");
 
                             $("#camara, #sobre, #memoria").click(function () {
                                 var pagina = $(this).data('valor');

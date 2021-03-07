@@ -1,4 +1,14 @@
-<? require_once 'config.php' ?>
+<?
+require_once 'config.php';
+
+//Caso não exista usuario logado, logue antes
+if (@!$_SESSION['USUARIO'] && CLASSE != 'Login') {
+    //Pode acessar a classe usuário para cadastrar algum
+    if (CLASSE != 'Usuario') {
+        header('Location: ' . URL . 'Login/acessar');
+    }
+}
+?>
 <title><?= TITULO ?></title>
 <link rel="shortcut icon" href="../imagens/favicon.ico">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">

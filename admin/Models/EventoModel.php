@@ -6,9 +6,9 @@ class EventoModel extends Model {
     public $chave = 'ID_EVENTO';
     public $buscarCampos = ['TITULO'];
 
-    public function __construct($pdo = '', $paginacao = true) {
-        parent::__construct($pdo, $paginacao);
+    public function listar($valores = array(), $todos = false) {
         $this->addOrder('DATA_PUBLICACAO DESC');
+        return parent::listar($valores, $todos);
     }
 
     //DADOS
