@@ -3,8 +3,18 @@ require_once '../admin/config.php';
 require_once '../admin/Models/Model.php';
 
 $pdo = new Model('', false);
+
+$top = '';
+$limit = '';
+if (ehSqlServer() && @$_GET['LIMIT']) {
+    $top = " TOP $_GET[LIMIT] ";
+} else if (@$_GET['LIMIT']) {
+    $limit = " LIMIT $_GET[LIMIT] ";
+}
+$pdo->addOrder("DATA_PUBLICACAO DESC $limit");
+
 $sql = "
-    SELECT * 
+    SELECT $top * 
       FROM EVENTO 
 ";
 if ($_GET['CATEGORIA'] != '*') {
@@ -16,11 +26,7 @@ if ($_GET['CATEGORIA'] != '*') {
 if (@$_GET['ID_EVENTO']) {
     $where['ID_EVENTO'] = $_GET['ID_EVENTO'];
 }
-$limit = '';
-if (@$_GET['LIMIT']) {
-    $limit = " LIMIT $_GET[LIMIT] ";
-}
-$pdo->addOrder("DATA_PUBLICACAO DESC $limit");
+
 $EVENTO = $pdo->listarRetorno($sql, @$where);
 IF ($_GET['CATEGORIA'] != '*') {
 

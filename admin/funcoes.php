@@ -1,5 +1,12 @@
 <?
 
+function ehSqlServer(){
+    if(DB_LIB == 'sqlsrv'){
+        return true;
+    }
+    return false;
+}
+
 //Lista arquivos de uma pasta
 function mArquivosListar($dir = '', $tudo = false, $asc = true) {
     $ARQUIVOS = array();

@@ -32,7 +32,7 @@ class EventoModel extends Model {
 
         //NOME - Já existe?
         if (!$this->erro && $metodo != 'Model::alterar') {
-            $sql = "SELECT 1 FROM EVENTO WHERE TITULO = '{$this->dado['TITULO']}' LIMIT 1";
+            $sql = "SELECT 1 FROM EVENTO WHERE TITULO = '{$this->dado['TITULO']}'";
             $this->paginacao = false;
             if ($this->listarRetorno($sql)) {
                 $this->erro['Título'] = 'Já cadastrado';

@@ -36,12 +36,29 @@ class Model {
     }
 
     public function pdo() {
-        if ($this->pdo) {
-            return $this->pdo;
-        }
+        try {
+            if ($this->pdo) {
+                return $this->pdo;
+            }
 
-        $this->pdo = new PDO(DB_LIB . ':host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=' . DB_CHARSET, DB_USER, DB_PASS);
-        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            //GERAL
+            $hostServer = ':host=' . DB_HOST;
+            $nameDb = ';dbname=' . DB_NAME;
+            $charset = ';charset=' . DB_CHARSET;
+
+            //SQL SERVER 
+            if (DB_LIB == 'sqlsrv') {
+                $hostServer = ':Server=' . DB_HOST;
+                $nameDb = ';Database=' . DB_NAME;
+                $charset = '';
+            }
+            
+            $this->pdo = new PDO(DB_LIB . $hostServer . $nameDb . $charset, DB_USER, DB_PASS);
+            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            //pr($e);
+            exit('<br><b>Erro de conexao. Entre em contato</b>');
+        }
         return $this->pdo;
     }
 
@@ -144,7 +161,7 @@ class Model {
         $limite = '';
         if ($this->paginacao) {
             $inicio = (coalesce(@$_GET['pagina'], 1) - 1) * $this->pagina_total;
-            $limite = " LIMIT $inicio,$this->pagina_total ";
+            //$limite = " LIMIT $inicio,$this->pagina_total ";
         }
 
         $acao = $this->prepareExecute($sql . $this->where($valores) . $this->order . $limite, $valores, true);
