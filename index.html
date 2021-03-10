@@ -64,7 +64,7 @@
                                     <ul class="social-icons">
                                         <li><a target="_blank" href="https://facebook.com/sistemaACAFE" class="fa fa-facebook"></a></li>
                                         <li><a target="_blank" href="https://instagram.com/sistemaacafe_oficial" class="fa fa-instagram"></a></li>
-                                        <li><a target="_blank" href="https://twitter.com/acafe_noticias" class="fa fa-twitter"></a></li>
+                                        <!-- <li><a target="_blank" href="https://twitter.com/acafe_noticias" class="fa fa-twitter"></a></li> -->
                                         <li><a target="_blank" href="https://youtube.com/channel/UCSxFb0A4-N-8Lsa8VMVpo7w" class="fa fa-youtube"></a></li>
                                     </ul>
                                 </div> 
@@ -94,9 +94,9 @@
                                         <li><a href="#noticia">Notícias</a></li>
                                         <li><a href="#portfolio">Vestibulares SUA Concursos</a></li>
                                         <li><a href="#instituicao">Instituições</a></li>
+                                        <li><a href="#" data-valor="camaras" class="camara">Camâras</a></li>
                                         <li><a href="#acafe">ACAFE</a></li>
                                         <li><a href="#contact">Contato</a></li>
-
                                     </ul>
                                 </div> 
                             </div>
@@ -112,6 +112,7 @@
                                     <li><a href="#noticia">Notícias</a></li>
                                     <li><a href="#portfolio">Vestibulares SUA Concursos</a></li>
                                     <li><a href="#instituicao">Instituições</a></li>
+                                    <li><a href="#" data-valor="camaras" class="camara" >Camâras</a></li>
                                     <li><a href="#acafe">ACAFE</a></li>
                                     <li><a href="#contact">Contato</a></li>
                                 </ul>
@@ -143,10 +144,9 @@
                     <h2>Notícias</h2>
                     <span></span>
                 </div> 
-
                 <div class="row" style="margin: 0; padding: 0">
                     <div class="our-team noticias-lista-4" style="margin: 0; padding: 0">
-
+                        
                     </div>
                 </div>
                 <div class="row" style="padding: 0; margin: 0">
@@ -439,7 +439,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-sm-8 col-xs-12">
-                        <a style="display: inline; text-decoration: none; cursor: pointer" data-valor="camaras" id="camara">Câmaras Setoriais</a> |
+                        <!--<a style="display: inline; text-decoration: none; cursor: pointer" data-valor="camaras" class="camara">Câmaras Setoriais</a> | -->
                         <a style="display: inline; text-decoration: none" target="_blank" href="documentos/estatuto.pdf">Estatuto</a> |
                         <a style="display: inline; text-decoration: none" target="_blank" href="https://acafe.org.br/portal">Portais</a> |
                         <a style="display: inline; text-decoration: none" target="_blank" href="https://webmail.acafe.org.br">Webmail</a>
@@ -489,9 +489,9 @@
                             $('.noticias-lista-4').load("paginas/eventos.php?CATEGORIA=Notícia&LIMIT=4");
                             $('.concurso-lista-4').load("paginas/eventos.php?CATEGORIA=*&LIMIT=4");
 
-                            $("#camara, #sobre, #memoria").click(function () {
+                            $(".camara, #sobre, #memoria").click(function () {
                                 var pagina = $(this).data('valor');
-
+                                
                                 $('#noticia').hide();
                                 $('#portfolio').hide();
                                 $('#instituicao').hide();
@@ -515,9 +515,7 @@
                                     $('#instituicao').show();
                                     $('#ies-img').show();
                                     $('#acafe').show();
-
                                     $('#camara-section').hide();
-
                                     jQuery('html,body').animate({
                                         scrollTop: ($($ir).offset().top) - 100
                                     }, 'slow');
