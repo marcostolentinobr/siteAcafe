@@ -20,5 +20,5 @@ INSERT INTO EVENTO (ID_EVENTO, CATEGORIA, TITULO, TEXTO, IMAGEM, DATA_PUBLICACAO
 	(12, 'Sua', 'SUA ESPECIAL USJ VERÃO 2021', 'https://acafe.org.br/concurso/sua_usj/2021/1/site', '12.png', '2021-02-15 21:00:53', 1),
 	(13, 'Sua', 'SUA VERÃO 2021', 'https://acafe.org.br/concurso/sua/2021/1/site', '13.png', '2020-10-14 00:34:00', 1),
 	(14, 'Vestibular', 'VESTIBULAR VERÃO 2021', 'https://acafe.org.br/concurso/vestibular/anteriores/?a=2021&s=1', '14.png', '2020-10-05 00:39:40', 1),
-	(17, 'Vestibular', 'VESTIBULAR VERÃO 2020', 'https://acafe.org.br/concurso/vestibular/anteriores/?a=2020&s=1', '17.png', '2021-03-07 01:28:11', 1),
+	(17, 'Vestibular', 'VESTIBULAR VERÃO 2020', 'https://acafe.org.br/concurso/vestibular/anteriores/?a=2020&s=1', '17.png', '2019-09-09 01:28:11', 1),
 	(16, 'Sua', 'SUA INVERNO 2020', 'https://acafe.org.br/concurso/sua/2020/2/site', '16.png', '2020-06-08 01:07:57', 1);

@@ -165,7 +165,7 @@ class Model {
         $limite = '';
         if ($this->paginacao) {
             $inicio = (coalesce(@$_GET['pagina'], 1) - 1) * $this->pagina_total;
-            //$limite = " LIMIT $inicio,$this->pagina_total ";
+            $limite = " LIMIT $inicio,$this->pagina_total ";
         }
 
         $acao = $this->prepareExecute($sql . $this->where($valores) . $this->order . $limite, $valores, true);
