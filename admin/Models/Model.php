@@ -21,6 +21,10 @@ class Model {
     }
 
     public function ultimoInsertId() {
+        //Windows
+        if (DB_LIB == 'sqlsrv') {
+            return $this->pdo->lastInsertId();
+        }
         $retorno = $this->listarRetorno('SELECT LAST_INSERT_ID() AS ID');
         return $retorno[0]['ID'];
     }

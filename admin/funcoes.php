@@ -1,7 +1,7 @@
 <?
 
 function ehSqlServer(){
-    if(DB_LIB == 'sqlsrv'){
+    if(DB_LIB == 'sqlsrv' || DB_LIB == 'dblib'){
         return true;
     }
     return false;
