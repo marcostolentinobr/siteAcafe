@@ -47,22 +47,23 @@ if (isset($_GET['ID_EVENTO'])) {
 } else {
     foreach ($EVENTO as $evento) {
         $attr = " target='_blank' href='$evento[TEXTO]' ";
+        $cssHeigth = ' height: 50px; text-align: center ';
         if ($_GET['CATEGORIA'] == 'Notícia') {
             $attr = " onclick='noticiaDetalhe($evento[ID_EVENTO])' ";
+            $cssHeigth = ' height: 66px ';
         }
         ?>
-        <a class="col-md-3 col-sm-4" style="cursor: pointer; font-weight: bold; margin-top: 50px" <?= $attr ?> >
+        <a class="col-md-3 col-sm-4" style="cursor: pointer; font-weight: bold; margin-top: 50px" title="<?= $evento['TITULO'] ?>" <?= $attr ?> >
             <div class="team-member" style="max-width: 255px">
                 <div class="member-img">
-                    <img style="max-height: 200px; width: 100%"  src="admin/arquivos/<?= $evento['IMAGEM'] ?>">
+                    <img style="max-height: 200px; width: 100%; "  src="admin/arquivos/<?= $evento['IMAGEM'] ?>">
                 </div>
-                <!--<div class="inner-content" style="padding-top: 0">-->
                 <div class="inner-content" style=" background: whitesmoke;
                      border: 1px solid #d6d6d6;
                      border-top: 0;
                      padding: 20px;">
-                    <small style="font-size: 10px">Publicado em <?= dataFormatar($evento['DATA_PUBLICACAO'], 'M') ?></small>
-                    <h5>
+                    <small style="font-size: 10px; color: silver; font-weight: normal">Publicado em <?= dataFormatar($evento['DATA_PUBLICACAO'], 'M') ?></small>
+                    <h5 style="<?= $cssHeigth ?>;">
 
                         <?= reticencias($evento['TITULO'], '54') ?>
 
