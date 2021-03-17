@@ -6,7 +6,7 @@ class Evento extends Controller {
     protected $categoriaLista = [
         'Notícia',
         'Vestibular',
-        'Sua',
+        'Seletivo',
         'Concurso'
     ];
 

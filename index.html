@@ -64,7 +64,6 @@
                                     <ul class="social-icons">
                                         <li><a target="_blank" href="https://facebook.com/sistemaACAFE" class="fa fa-facebook"></a></li>
                                         <li><a target="_blank" href="https://instagram.com/sistemaacafe_oficial" class="fa fa-instagram"></a></li>
-                                        <!-- <li><a target="_blank" href="https://twitter.com/acafe_noticias" class="fa fa-twitter"></a></li> -->
                                         <li><a target="_blank" href="https://youtube.com/channel/UCSxFb0A4-N-8Lsa8VMVpo7w" class="fa fa-youtube"></a></li>
                                     </ul>
                                 </div> 
@@ -91,12 +90,14 @@
                             <div class="col-md-10 col-sm-10 col-xs-8">
                                 <div class="menu text-right hidden-sm hidden-xs">
                                     <ul>
-                                        <li><a href="#noticia">Notícias</a></li>
-                                        <li><a href="#portfolio">Vestibulares SUA Concursos</a></li>
+                                        <!-- <li><a href="#noticia">Notícias</a></li> -->
+                                        <li><a href="#vestibular">Vestibulares</a></li>
+                                        <li><a href="#seletivo">Seletivos</a></li>
+                                        <li><a href="#concurso">Concursos</a></li>
                                         <li><a href="#instituicao">Instituições</a></li>
                                         <li><a href="#" data-valor="camaras" class="camara">Câmara</a></li>
                                         <li><a href="#acafe">ACAFE</a></li>
-                                        <li><a href="#contact">Contato</a></li>
+                                        <!-- <li><a href="#contact">Contato</a></li> -->
                                     </ul>
                                 </div> 
                             </div>
@@ -109,12 +110,14 @@
                             <a href="#" class="toggle-menu fa fa-bars"></a>
                             <div class="menu">
                                 <ul>
-                                    <li><a href="#noticia">Notícias</a></li>
-                                    <li><a href="#portfolio">Vestibulares SUA Concursos</a></li>
+                                    <!-- <li><a href="#noticia">Notícias</a></li> -->
+                                    <li><a href="#vestibulares">Vestibulares</a></li>
+                                    <li><a href="#seletivo">Seletivos</a></li>
+                                    <li><a href="#concursos">Concursos</a></li>
                                     <li><a href="#instituicao">Instituições</a></li>
                                     <li><a href="#" data-valor="camaras" class="camara" >Camâras</a></li>
                                     <li><a href="#acafe">ACAFE</a></li>
-                                    <li><a href="#contact">Contato</a></li>
+                                    <!-- <li><a href="#contact">Contato</a></li> -->
                                 </ul>
                             </div> 
                         </div> 
@@ -138,155 +141,198 @@
         </div>
         <!-- fim do carrocel -->
 
+        <!-- notícias -->
         <div id="noticia" class="section-cotent">
             <div class="container">
-                <div class="title-section text-center">
+                <div class="title-section text-center" style="margin-bottom: 0">
                     <h2>Notícias</h2>
                     <span></span>
                 </div> 
                 <div class="row" style="margin: 0; padding: 0">
-                    <div class="our-team noticias-lista-4" style="margin: 0; padding: 0">
-                        
+                    <div class="our-team Noticia" style="margin: 0; padding: 0">
+                        <!-- local dos itens -->
                     </div>
                 </div>
                 <div class="row" style="padding: 0; margin: 0">
-                    <a target="_blank" style="cursor: pointer" onclick="noticiaTodas()" >Ver todas as notícias</a>
+                    <a target="_blank" style="cursor: pointer" onclick="eventosLista('Notícia')" >Ver todas as notícias</a>
                 </div>
             </div>
         </div>
+        <!-- fim notícias -->
 
-        <div class="section-content" style="margin-top: 50px">
+        <!-- vestibulares -->
+        <div id="vestibular" class="section-cotent" style="margin-top: 40px">
             <div class="container">
-                <div class="title-section text-center">
-                    <h2>Vestibulares - SUA - Concursos</h2>
+                <div class="title-section text-center" style="margin-bottom: 0">
+                    <h2>Vestibulares</h2>
                     <span></span>
                 </div> 
-                <div class="row concurso-lista-4">
-                    
-
-                </div> <!-- /.container -->
-                <div class="row" style="padding: 0; margin: 0">
-                    <br>
-                    <a target="_blank"  style="cursor: pointer" onclick="concursoTodas()" >Ver todos os concursos</a>
+                <div class="row" style="margin: 0; padding: 0">
+                    <div class="our-team Vestibular" style="margin: 0; padding: 0">
+                        <!-- local dos itens -->
+                    </div>
                 </div>
-            </div> <!-- /#portfolio -->
+                <div class="row" style="padding: 0; margin: 0">
+                    <a target="_blank" style="cursor: pointer" onclick="eventosLista('Vestibular')" >Ver todos os vestibulares</a>
+                </div>
+            </div>
         </div>
+        <!-- fim vestibulares -->
 
+        <!-- seletivo -->
+        <div id="seletivo" class="section-cotent" style="margin-top: 40px">
+            <div class="container">
+                <div class="title-section text-center" style="margin-bottom: 0">
+                    <h2>Processo Seletivo</h2>
+                    <span></span>
+                </div> 
+                <div class="row" style="margin: 0; padding: 0">
+                    <div class="our-team Seletivo" style="margin: 0; padding: 0">
+                        <!-- local dos itens -->
+                    </div>
+                </div>
+                <div class="row" style="padding: 0; margin: 0">
+                    <a target="_blank" style="cursor: pointer" onclick="eventosLista('Seletivo')" >Ver todos os processos seletivos</a>
+                </div>
+            </div>
+        </div>
+        <!-- fim seletivo -->
+
+        <!-- concursos -->
+        <div id="concurso" class="section-cotent" style="margin-top: 40px">
+            <div class="container">
+                <div class="title-section text-center" style="margin-bottom: 0">
+                    <h2>Concursos</h2>
+                    <span></span>
+                </div> 
+                <div class="row" style="margin: 0; padding: 0">
+                    <div class="our-team Concurso" style="margin: 0; padding: 0">
+                        <!-- local dos itens -->
+                    </div>
+                </div>
+                <div class="row" style="padding: 0; margin: 0">
+                    <a target="_blank" style="cursor: pointer" onclick="eventosLista('Concurso')" >Ver todos os concursos</a>
+                </div>
+            </div>
+        </div>
+        <!-- fim concursos -->
+
+        <!-- instituições -->
         <div id="instituicao" class="section-cotent">
             <div class="container">
                 <div class="title-section text-center">
                     <h2>INSTITUIÇÕES</h2>
                     <span></span>
-                </div> <!-- /.title-section -->
-                <div class="row">
-
-
-                </div> <!-- /.row -->
-            </div> <!-- /.container -->
-        </div> <!-- /#services -->
-
+                </div>
+                <div class="row"></div> 
+            </div> 
+        </div> 
         <section id="ies-img" style="background-color: #f0f0f1" >
-
             <div class="container" data-aos="fade-up" style="padding: 20px">
-
                 <div class="row-cols-lg-8" style="text-align: center" data-aos="zoom-in" data-aos-delay="100">
 
+                    <!-- furb -->
                     <a class="col-lg-2" target="_blank" href="https://furb.br">
                         <img src="imagens/logos/furb.png">
                     </a>
 
+                    <!-- udesc -->
                     <a class="col-lg-2" target="_blank" href="https://udesc.br">
                         <img src="imagens/logos/udesc.png">
                     </a>
 
+                    <!-- unc -->
                     <a class="col-lg-2" target="_blank" href="https://unc.br">
                         <img src="imagens/logos/unc.png">
                     </a>
 
+                    <!-- catolica -->
                     <a class="col-lg-2" target="_blank" href="http://catolicasc.org.br">
                         <img src="imagens/logos/catolica.png">
                     </a>
 
+                    <!-- unesc -->
                     <a class="col-lg-2" target="_blank" href="https://unesc.net">
                         <img src="imagens/logos/unesc.png">
                     </a>
 
+                    <!-- unibave -->
                     <a class="col-lg-2" target="_blank" href="https://unibave.net">
                         <img src="imagens/logos/unibave.png">
                     </a>
 
+                    <!-- unidave -->
                     <a class="col-lg-2" target="_blank" href="https://unidavi.edu.br">
                         <img src="imagens/logos/unidave.png">
                     </a>
 
+                    <!-- unifebe -->
                     <a class="col-lg-2" target="_blank" href="https://unifebe.edu.br">
                         <img src="imagens/logos/unifebe.png">
                     </a>
 
-
+                    <!-- uniplac -->
                     <a class="col-lg-2" target="_blank" href="https://uniplaclages.edu.br">
                         <img src="imagens/logos/uniplac.png">
                     </a>
 
+                    <!-- unisul -->
                     <a class="col-lg-2" target="_blank" href="http://unisul.br">
                         <img src="imagens/logos/unisul.png">
                     </a>
 
+                    <!-- univali -->
                     <a class="col-lg-2" target="_blank" href="https://univali.br">
                         <img src="imagens/logos/univali.png">
                     </a>
 
-
+                    <!-- univille -->
                     <a class="col-lg-2" target="_blank" href="https://univille.edu.br">
                         <img src="imagens/logos/univille.png">
                     </a>
 
-
+                    <!-- unochapeco -->
                     <a class="col-lg-2" target="_blank" href="https://unochapeco.edu.br">
                         <img src="imagens/logos/unochapeco.png">
                     </a>
 
-
+                    <!-- unoesc -->
                     <a class="col-lg-2" target="_blank" href="https://unoesc.edu.br">
                         <img src="imagens/logos/unoesc.png">
                     </a>
 
+                    <!-- usj -->
                     <a class="col-lg-2" target="_blank" href="https://usj.edu.br">
                         <img src="imagens/logos/usj.png">
                     </a>
 
+                    <!-- uniarp -->
                     <a class="col-lg-2" target="_blank" href="https://uniarp.edu.br">
                         <img src="imagens/logos/uniarp.png">
                     </a>
 
                 </div>
-
             </div>
-
         </section>
+        <!-- fim instituições -->
 
+        <!-- acafe -->
         <div id="acafe" class="section-cotent">
             <div class="container">
-
-                <!-- titulo -->
                 <div class="title-section text-center">
                     <h2>ACAFE</h2>
                     <span></span>
-                </div> <!-- /.title-section -->
+                </div>
 
                 <div class="row">
 
                     <!-- sobre -->
                     <div class="col-md-3 col-sm-6">
                         <div class="service-item">
-
-                            <!-- titulo -->
                             <div class="service-header">
                                 <i class="fa fa-umbrella"></i>
                                 <h3>Sobre</h3>
                             </div>
-
-                            <!-- texto -->
                             <div class="service-description">
                                 A ACAFE é uma sociedade civil sem fins lucrativos que congrega as fundações educacionais 
                                 criadas no Estado de Santa Catarina por lei dos poderes públicos estaduais e municipais. 
@@ -294,44 +340,34 @@
                                 entre as Instituições de Educação Superior.<br>
                                 <a rel="nofollow" data-valor="sobre" style="cursor: pointer" id="sobre">Ler mais</a>
                             </div>
-
-                        </div> <!-- /.service-item -->
-                    </div> <!-- /.col-md-3 -->
+                        </div> 
+                    </div> 
                     <!-- fim sobre -->
 
                     <!-- missao -->
                     <div class="col-md-3 col-sm-6">
                         <div class="service-item">
-
-                            <!-- titulo -->
                             <div class="service-header">
                                 <i class="fa fa-cogs"></i>
                                 <h3>Missão</h3>
                             </div>
-
-                            <!-- texto -->
                             <div class="service-description">
                                 Desenvolver o ensino, ciência, tecnologia e inovação 
                                 pelo compartilhamento de ações e competências para 
                                 assegurar o fortalecimento das IES associadas em prol 
                                 da educação superior em Santa Catarina.
                             </div>
-
-                        </div> <!-- /.service-item -->
-                    </div> <!-- /.col-md-3 -->
+                        </div> 
+                    </div>
                     <!-- fim missao -->
 
                     <!-- visao -->
                     <div class="col-md-3 col-sm-6">
                         <div class="service-item">
-
-                            <!-- titulo -->
                             <div class="service-header">
                                 <i class="fa fa-heart"></i>
                                 <h3>Visão</h3>
                             </div>
-
-                            <!-- texto -->
                             <div class="service-description">
                                 Ser reconhecido Nacional e Internacionalmente como 
                                 um Sistema de Educação Superior integrado e sinérgico, 
@@ -339,22 +375,17 @@
                                 Sociedade na produção do conhecimento, da ciência, 
                                 da tecnologia e da inovação.
                             </div>
-
-                        </div> <!-- /.service-item -->
-                    </div> <!-- /.col-md-3 -->
+                        </div> 
+                    </div>
                     <!-- fim visao -->
 
                     <!-- memooria -->
                     <div class="col-md-3 col-sm-6">
                         <div class="service-item">
-
-                            <!-- titulo -->
                             <div class="service-header">
                                 <i class="fa fa-desktop"></i>
                                 <h3>Memória</h3>
                             </div>
-
-                            <!-- texto -->
                             <div class="service-description">
                                 Em 1974, os presidentes das fundações criadas por lei municipal e da fundação criada pelo Estado
                                 constituíram a ACAFE – Associação Catarinense das Fundações Educacionais, entidade sem fins
@@ -363,26 +394,25 @@
                                 representá-las junto aos órgãos dos Governos Estadual e Federal.
                                 <br><a rel="nofollow" style="cursor: pointer" data-valor="memoria" id="memoria">Ler mais</a>
                             </div>
+                        </div>
+                    </div> 
+                    <!-- fim memoria -->
 
-                        </div> <!-- /.service-item -->
-                    </div> <!-- /.col-md-3 -->
-                    <!-- fim memooria -->
+                </div>
+            </div> 
+        </div>
+        <!-- fim acafe -->
 
-                </div> <!-- /.row -->
-            </div> <!-- /.container -->
-        </div> <!-- /#services -->
-
-        <!---->
-        <!--   -->
+        <!-- camara -->
         <div style="display: none" id="camara-section"  class="section-cotent"></div>
 
-
+        <!-- contato -->
         <div id="contact" class="section-cotent">
             <div class="container">
                 <div class="title-section text-center">
                     <h2>Contato</h2>
                     <span></span>
-                </div> <!-- /.title-section -->
+                </div> 
                 <div class="row">
                     <div class="col-md-7 col-sm-6">
                         <iframe 
@@ -391,60 +421,71 @@
                             allowfullscreen="" loading="lazy"
                             >
                         </iframe>
-                    </div> <!-- /.col-md-3 -->
+                    </div>
                     <div class="col-md-5 col-sm-6">
                         <div class="contact-info">
                             <span><i class="fa fa-home"></i><br>Rua Presidente Coutinho, 311 <br>Centro - Florianópolis/SC <br>CEP: 88015-230 <br>Centro Comercial Saint James 1° e 2° andar</span>
                             <span><i class="fa fa-phone"></i>+55 48 3224 8860</span>
                             <span><i class="fa fa-envelope"></i>?????@acafe.org.br</span>
                         </div>
-                    </div> <!-- /.col-md-3 -->
-                </div> <!-- /.row -->
-            </div> <!-- /.container -->
-        </div> <!-- /#contact -->
+                    </div>
+                </div> 
+            </div>
+        </div> 
+        <!-- fim contato -->
 
+        <!-- selos -->
         <div class="section-cotent">
             <div class="container">
                 <div class="title-section text-center">
                     <h2>&nbsp;</h2>
                     <span></span>
-                </div> <!-- /.title-section -->
+                </div>
                 <div class="row">
+
+                    <!-- fapesc -->
                     <div class="col-md-3" style="padding: 40px 0" >
                         <a target="_blank" href="https://movimentoods.org.br">
                             <img style="width: 70%" src="imagens/selos/fapesc.png" />                        
                         </a>
                     </div>
+
+                    <!-- nos podemos -->
                     <div class="col-md-3" style="padding: 40px 0">
                         <a target="_blank" href="http://centrosdeinovacao.sc.gov.br/pacto-pela-inovacao">
                             <img style="width: 70%" src="imagens/selos/nos-podemos-sc.png" />                        
                         </a>
                     </div>
+
+                    <!-- pacto inovação -->
                     <div class="col-md-3" style="padding: 40px 0">
-                        <a target="_blank" href="http://www.fapesc.sc.gov.br">
+                        <a target="_blank" href="#">
                             <img style="width: 70%" src="imagens/selos/pacto-inovacao.png" />
                         </a>                        
                     </div>
+
+                    <!-- universidade comunitaria -->
                     <div class="col-md-3" style="padding: 40px 0">
                         <a target="_blank" href="http://www.abruc.org.br">
                             <img style="width: 70%" src="imagens/selos/universidade-comunitaria.png" />
                         </a>                        
                     </div>
-                </div> <!-- /.row -->
-            </div> <!-- /.container -->
-        </div> <!-- /#contact -->
 
+                </div> 
+            </div> 
+        </div>
+        <!-- fim selos -->
 
+        <!-- rodapé -->
         <div class="site-footer">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-sm-8 col-xs-12">
-                        <!--<a style="display: inline; text-decoration: none; cursor: pointer" data-valor="camaras" class="camara">Câmaras Setoriais</a> | -->
                         <a style="display: inline; text-decoration: none" target="_blank" href="documentos/estatuto.pdf">Estatuto</a> |
                         <a style="display: inline; text-decoration: none" target="_blank" href="https://acafe.org.br/portal">Portais</a> |
                         <a style="display: inline; text-decoration: none" target="_blank" href="https://webmail.acafe.org.br">Webmail</a>
                         <p>Sistema ACAFE &copy; 2020. Todos direitos reservados</p>  
-                    </div> <!-- /.col-md-6 -->
+                    </div>
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="go-top">
                             <a href="#" id="go-top">
@@ -452,10 +493,11 @@
                                 Topo
                             </a>
                         </div>
-                    </div> <!-- /.col-md-6 -->
-                </div> <!-- /.row -->
-            </div> <!-- /.container -->
-        </div> <!-- /.site-footer -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- fim rodapé -->
 
         <script src="libs/bootstrap/js/bootstrap.min.js"></script>
         <script src="libs/js/plugins.js"></script>
@@ -463,37 +505,38 @@
         <script src="libs/js/custom.js"></script>
         <script type="text/javascript">
 
-                        function concursoTodas() {
-                            $('.concurso-lista-4').load("paginas/eventos.php?CATEGORIA=*");
+                        function eventosLista(evento) {
+                            var classe = evento;
+                            if (classe == 'Notícia') {
+                                classe = 'Noticia';
+                            }
+                            $('.' + classe).load("paginas/eventos.php?CATEGORIA=" + evento);
                             jQuery('html,body').animate({
-                                scrollTop: ($(".concurso-lista-4").offset().top) - 100
+                                scrollTop: ($("." + classe).offset().top) - 100
                             }, 'slow');
                         }
 
-                        function noticiaTodas() {
-                            $('.noticias-lista-4').load("paginas/eventos.php?CATEGORIA=Notícia");
+                        function noticiaDetalhe(pagina) {
+                            $('.Noticia').load("paginas/eventos.php?CATEGORIA=Notícia&ID_EVENTO=" + pagina);
                             jQuery('html,body').animate({
-                                scrollTop: ($(".noticias-lista-4").offset().top) - 100
-                            }, 'slow');
-                        }
-
-                        function noticia(pagina) {
-                            $('.noticias-lista-4').load("paginas/eventos.php?CATEGORIA=Notícia&ID_EVENTO=" + pagina);
-                            jQuery('html,body').animate({
-                                scrollTop: ($(".noticias-lista-4").offset().top) - 100
+                                scrollTop: ($(".Noticia").offset().top) - 100
                             }, 'slow');
                         }
 
                         $(document).ready(function () {
 
-                            $('.noticias-lista-4').load("paginas/eventos.php?CATEGORIA=Notícia&LIMIT=4");
-                            $('.concurso-lista-4').load("paginas/eventos.php?CATEGORIA=*&LIMIT=4");
+                            $('.Noticia').load("paginas/eventos.php?CATEGORIA=Notícia&LIMIT=4");
+                            $('.Vestibular').load("paginas/eventos.php?CATEGORIA=Vestibular&LIMIT=4");
+                            $('.Seletivo').load("paginas/eventos.php?CATEGORIA=Seletivo&LIMIT=4");
+                            $('.Concurso').load("paginas/eventos.php?CATEGORIA=Concurso&LIMIT=4");
 
                             $(".camara, #sobre, #memoria").click(function () {
                                 var pagina = $(this).data('valor');
-                                
+
                                 $('#noticia').hide();
-                                $('#portfolio').hide();
+                                $('#vestibular').hide();
+                                $('#seletivo').hide();
+                                $('#concurso').hide();
                                 $('#instituicao').hide();
                                 $('#ies-img').hide();
                                 $('#acafe').hide();
@@ -511,7 +554,9 @@
 
                                 if ($ir != '#') {
                                     $('#noticia').show();
-                                    $('#portfolio').show();
+                                    $('#vestibular').show();
+                                    $('#seletivo').show();
+                                    $('#concurso').show();
                                     $('#instituicao').show();
                                     $('#ies-img').show();
                                     $('#acafe').show();
@@ -519,13 +564,8 @@
                                     jQuery('html,body').animate({
                                         scrollTop: ($($ir).offset().top) - 100
                                     }, 'slow');
-
                                 }
-
-
                             });
-
-
 
                         });
 

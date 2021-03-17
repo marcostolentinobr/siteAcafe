@@ -26,10 +26,6 @@ class EventoModel extends Model {
         $this->dado['TEXTO'] = campo($dado['TEXTO']);
         $this->campoValidacao('TEXTO', 8000);
 
-        //ID_USUARIO 
-        $this->dado['ID_USUARIO'] = getSession('ID_USUARIO');
-        $this->campoValidacao('ID_USUARIO');
-
         //NOME - Já existe?
         if (!$this->erro && $metodo != 'Model::alterar') {
             $sql = "SELECT 1 FROM EVENTO WHERE TITULO = '{$this->dado['TITULO']}'";
