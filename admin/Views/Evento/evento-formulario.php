@@ -29,7 +29,10 @@
 <small>
     <span style="color:blue">Para imagens copie e cole o código a baixo</span><br>
     <?= htmlentities('<img src="http://acafe.org.br/arquivos/acafe/logo.png" style="width: 100%" />'); ?><br>
-    <span style="color:blue">onde em src é o link da imagem</span>
+    <span style="color:blue">onde em src é o link da imagem</span><BR><BR>
+    <span style="color:blue">Para links copie e cole o código a baixo</span><br>
+    <?= htmlentities("<a href='https://acafe.org.br' target='_blank'>DESCRIÇÃO</a>"); ?><br>
+    <span style="color:blue">onde é href coloque o link do site e altere a descrição em DESCRIÇÃO</span>
 </small>
 <!-- IMAGEM -->
 <? $campo = ['IMAGEM[]', 'Imagem de chamada <small>máximo em 255x200 </small>'] ?>
