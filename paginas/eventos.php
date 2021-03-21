@@ -53,22 +53,24 @@ if (isset($_GET['ID_EVENTO'])) {
             $cssHeigth = ' height: 66px ';
         }
         ?>
-        <a class="col-md-3 col-sm-4" style="cursor: pointer; font-weight: bold; margin-top: 50px" title="<?= $evento['TITULO'] ?>" <?= $attr ?> >
-            <div class="team-member" style="max-width: 255px">
+        <a class="col-md-3 col-sm-4" style="cursor: pointer; font-weight: bold; margin-top: 50px; " title="<?= $evento['TITULO'] ?>" <?= $attr ?> >
+            <div class="team-member" style="text-align: center">
                 <div class="member-img">
-                    <img style="max-height: 200px; width: 100%; "  src="admin/arquivos/<?= $evento['IMAGEM'] ?>">
+                    <img style="max-height: 200px; width: 255px; "  src="admin/arquivos/<?= $evento['IMAGEM'] ?>">
                 </div>
-                <div class="inner-content" style=" background: whitesmoke;
-                     border: 1px solid #d6d6d6;
-                     border-top: 0;
-                     padding: 20px;">
-                    <small style="font-size: 10px; color: silver; font-weight: normal">Publicado em <?= dataFormatar($evento['DATA_PUBLICACAO'], 'M') ?></small>
-                    <h5 style="<?= $cssHeigth ?>;">
-
-                        <?= reticencias($evento['TITULO'], '54') ?>
-
-                    </h5>
-                </div>
+                <center>
+                    <div class="inner-content" style=" background: whitesmoke;
+                         border: 1px solid #d6d6d6;
+                         border-top: 0;
+                         padding: 20px;
+                         width: 255px
+                         ">
+                        <small style="font-size: 10px; color: silver; font-weight: normal">Publicado em <?= dataFormatar($evento['DATA_PUBLICACAO'], 'M') ?></small>
+                        <h5 style="<?= $cssHeigth ?>;">
+                            <?= reticencias($evento['TITULO'], '54') ?>
+                        </h5>
+                    </div>
+                </center>
             </div> 
         </a>
         <?
