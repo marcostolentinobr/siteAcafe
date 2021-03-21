@@ -2,17 +2,19 @@
 
 session_start();
 
-//BANCO DE DADOS
-define('DB_LIB', 'mysql');
-define('DB_HOST', '127.0.0.1');
-define('DB_NAME', 'SITE');
-define('DB_CHARSET', 'utf8');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+//Title página
+define('TITULO', 'Eventos');
 
-define('TITULO', 'Cadastro de eventos');
-
-//Funções
+/*
+  //Conteudo do bd.php
+  define('DB_LIB', 'mysql');
+  define('DB_HOST', '127.0.0.1');
+  define('DB_NAME', 'SITE');
+  define('DB_USER', 'root');
+  define('DB_PASS', '');
+  define('DB_CHARSET', 'utf8');
+ */
+require '../../bd.php';
 require_once 'funcoes.php';
 
 //URL
