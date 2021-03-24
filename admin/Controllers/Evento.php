@@ -25,6 +25,7 @@ class Evento extends Controller {
                 $arq_local = RAIZ . "/arquivos/$arqNome";
                 $this->ok = move_uploaded_file($ARQ['tmp_name'][$ind], $arq_local);
                 if ($this->ok) {
+                    $this->Model->valorChave = $chave;
                     $this->ok = $this->Model->alterar(['IMAGEM' => $arqNome]);
                     if (!$this->ok) {
                         echo 'Rever o upload da imagem';
