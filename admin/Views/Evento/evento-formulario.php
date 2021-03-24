@@ -7,9 +7,9 @@
 </center>
 
 <!-- CATEGORIA -->
-<? $campo = ['CATEGORIA', 'Categoria'] ?>
+<? $campo = ['CATEGORIA', 'Categoria', 'select', 100, ' required '] ?>
 <label for="<?= $campo[0] ?>"><?= $campo[1] ?>:</label>
-<select id="<?= $campo[0] ?>" name="<?= $campo[0] ?>" required autofocus>
+<select id="<?= $campo[0] ?>" name="<?= $campo[0] ?>" <?= $campo[4] ?>>
     <option></option>
     <? foreach ($this->categoriaLista as $dado) { ?>
         <option value="<?= $dado ?>" <?= (@$this->dado[$campo[0]] == $dado ? 'selected' : '') ?>><?= $dado ?></option>
@@ -17,15 +17,15 @@
 </select>
 
 <!-- TITULO -->
-<? $campo = ['TITULO', 'Título', 150] ?>
+<? $campo = ['TITULO', 'Título', 'textarea', 150, ' required '] ?>
 <label><?= $campo[1] ?>:</label>
-<textarea id="<?= $campo[0] ?>" name="<?= $campo[0] ?>" maxlength="<?= $campo[2] ?>" required><?= @$this->dado[$campo[0]] ?></textarea>
+<textarea id="<?= $campo[0] ?>" name="<?= $campo[0] ?>" maxlength="<?= $campo[3] ?>" <?= $campo[4] ?>><?= @$this->dado[$campo[0]] ?></textarea>
 
 <!-- TEXTO -->
-<? $campo = ['TEXTO', 'Texto / Url', 8000] ?>
+<? $campo = ['TEXTO', 'Texto / Url', 'textarea', 8000, ' style="height: 180px" required  '] ?>
 <label><?= $campo[1] ?>:</label>
 <small style="color:blue">Texto apenas para notícias, os demais coloque apenas a URL</small><br>
-<textarea id="<?= $campo[0] ?>" name="<?= $campo[0] ?>" maxlength="<?= $campo[2] ?>" style="height: 180px" required ><?= @$this->dado[$campo[0]] ?></textarea>
+<textarea id="<?= $campo[0] ?>" name="<?= $campo[0] ?>" maxlength="<?= $campo[3] ?>" <?= $campo[4] ?>><?= @$this->dado[$campo[0]] ?></textarea>
 <small>
     <span style="color:blue">Para imagens copie e cole o código a baixo</span><br>
     <?= htmlentities('<img src="http://acafe.org.br/arquivos/acafe/logo.png" style="width: 100%" />'); ?><br>
@@ -35,6 +35,6 @@
     <span style="color:blue">onde é href coloque o link do site e altere a descrição em DESCRIÇÃO</span>
 </small>
 <!-- IMAGEM -->
-<? $campo = ['IMAGEM[]', 'Imagem de chamada <small>máximo em 255x200 </small>'] ?>
+<? $campo = ['IMAGEM[]', 'Imagem de chamada <small>máximo em 255x200 </small>', 'file'] ?>
 <label><?= $campo[1] ?></label>
-<input type="file" id="<?= $campo[0] ?>" name="<?= $campo[0] ?>" >
+<input type="<?= $campo[2] ?>" id="<?= $campo[0] ?>" name="<?= $campo[0] ?>" >

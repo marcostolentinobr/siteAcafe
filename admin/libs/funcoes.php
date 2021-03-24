@@ -1,7 +1,31 @@
 <?
 
-function ehSqlServer(){
-    if(DB_LIB == 'sqlsrv' || DB_LIB == 'dblib'){
+function iniciar() {
+
+    //URL
+    $url = [];
+    if (isset($_GET['pg'])) {
+        $url = explode('/', $_GET['pg']);
+    }
+    define('CLASSE', isset($url[0]) ? $url[0] : '');
+    define('METODO', isset($url[1]) ? $url[1] : '');
+    define('CHAVE', isset($url[2]) ? $url[2] : '');
+
+    //DIRETORIO RAIZ
+    define('RAIZ', str_replace('/libs', '',str_replace('\libs', '', __DIR__)));
+
+    //URL
+    $url = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . str_replace('index.php', '', $_SERVER['SCRIPT_NAME']);
+    define('URL', $url);
+    define('URL_ATUAL', URL . CLASSE . '/' . METODO);
+
+    
+    require_once 'Conexao.php';
+
+}
+
+function ehSqlServer() {
+    if (DB_LIB == 'sqlsrv' || DB_LIB == 'dblib') {
         return true;
     }
     return false;
@@ -262,7 +286,7 @@ function campo($elemento, $tipo = '', $maiuscula = false, $decimal = 2) {
 function instanciaModel($classe, $pdo = '') {
     require_once RAIZ . "/Models/{$classe}Model.php";
     $classe = "{$classe}Model";
-    return new $classe($pdo, false);
+    return new $classe($pdo, '', false);
 }
 
 function setSession($campo, $valor) {

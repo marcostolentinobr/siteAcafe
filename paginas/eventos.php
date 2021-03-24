@@ -1,31 +1,49 @@
 <?
+ini_set('display_errors', 1);
+ini_set('display_startup_erros', 1);
+error_reporting(E_ALL);
+
+
+
+
 require_once '../admin/config.php';
-require_once '../admin/Models/Model.php';
+require_once '../admin/libs/Conexao.php';
 
-$pdo = new Model('', false);
-
-$sql = "
-    SELECT * 
-      FROM EVENTO 
-";
-
+$pdo = new Conexao();
+//pr($pdo);
 //categoria
-$where = ['CATEGORIA' => $_GET['CATEGORIA']];
+
+if($_GET['CATEGORIA'] == 'Notícia' && DB_HOST == '10.0.0.3'){
+    $_GET['CATEGORIA'] = 'Noticia';
+}
+
+$pdo->addWhere('CATEGORIA', $_GET['CATEGORIA']);
 
 //id_evento
 if (isset($_GET['ID_EVENTO'])) {
-    $where['ID_EVENTO'] = $_GET['ID_EVENTO'];
+    $pdo->addWhere('ID_EVENTO', $_GET['ID_EVENTO']);
 }
 
 //order e limit
 $limit = '';
+$top = '';
 if (@$_GET['LIMIT']) {
-    $limit = " LIMIT  $_GET[LIMIT] ";
+    if (ehSqlServer()) {
+        $top = " TOP $_GET[LIMIT] ";
+    } else {
+        $limit = " LIMIT  $_GET[LIMIT] ";
+    }
 }
-$pdo->addOrder("DATA_PUBLICACAO DESC $limit");
+
+$sql = "
+    SELECT $top * 
+      FROM EVENTO 
+";
+
+$pdo->addOrder("DATA_PUBLICACAO DESC");
 
 //retorno
-$EVENTO = $pdo->listarRetorno($sql, @$where);
+$EVENTO = $pdo->getListar($sql, $limit);
 
 if (isset($_GET['ID_EVENTO'])) {
     $EVENTO = $EVENTO[0];
@@ -46,9 +64,10 @@ if (isset($_GET['ID_EVENTO'])) {
     <?
 } else {
     foreach ($EVENTO as $evento) {
+        
         $attr = " target='_blank' href='$evento[TEXTO]' ";
         $cssHeigth = ' height: 50px; text-align: center ';
-        if ($_GET['CATEGORIA'] == 'Notícia') {
+        if (in_array(@$_GET['CATEGORIA'],['Notícia','Noticia'])) {
             $attr = " onclick='noticiaDetalhe($evento[ID_EVENTO])' ";
             $cssHeigth = ' height: 66px ';
         }

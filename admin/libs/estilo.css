@@ -1,0 +1,66 @@
+label {
+    font-weight: bold;
+    display: block;
+    padding-top: 5px;
+}
+select, textarea, input {
+    width: 100%;        
+}
+
+input[type=submit] {
+    width: 55px;        
+}
+
+input[value=Editar] {
+    background-color: darkgoldenrod;        
+    color: white;
+}
+
+input[value=Excluir] {
+    background-color: #b96565;
+}
+
+input[value=Editar],input[value=Excluir] {
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 1px;
+}
+
+.teste {
+    background-image: url("http://localhost/crudPhpMvcPdoJs/libs/icones/padrao.png");
+}
+
+.sublinhadoPontilhadoPointer {
+    text-decoration: underline; 
+    text-decoration-style: dotted; 
+    cursor: pointer;
+}
+
+.sublinhadoPointer {
+    text-decoration: underline; 
+    cursor: pointer;
+}
+
+/*.table*/
+.table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table tr:hover {
+    background-color:silver;
+}
+
+.table {
+    width: 100%;
+}
+
+.table thead th {
+    background-color: darkgray;
+    padding: 5px;
+}
+
+.table td {
+   border-bottom: 1px solid;
+   border-color: silver;
+}

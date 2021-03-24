@@ -3,39 +3,23 @@
 class EventoModel extends Model {
 
     public $tabela = 'EVENTO';
-    public $chave = 'ID_EVENTO';
+    public $ID_CHAVE = 'ID_EVENTO';
     public $buscarCampos = ['TITULO'];
+    
+    public function listar() {
+        if (!ehSqlServer()) {
+            $this->addOrder('DATA_PUBLICACAO DESC');
+            return parent::listar();
+        } else {
+            $sql = "
+            SELECT E.*,
+                   CAST(E.TEXTO AS VARCHAR(MAX)) AS TEXTO
+              FROM EVENTO E
+        ";
 
-    public function listar($valores = array(), $todos = false) {
-        $this->addOrder('DATA_PUBLICACAO DESC');
-        return parent::listar($valores, $todos);
-    }
-
-    //DADOS
-    protected function dado($dado, $metodo = __METHOD__) {
-
-        //CATEGORIA 
-        $this->dado['CATEGORIA'] = campo($dado['CATEGORIA']);
-        $this->campoValidacao('CATEGORIA');
-
-        //TITULO
-        $this->dado['TITULO'] = campo($dado['TITULO']);
-        $this->campoValidacao('TITULO', 150);
-
-        //TEXTO 
-        $this->dado['TEXTO'] = campo($dado['TEXTO']);
-        $this->campoValidacao('TEXTO', 8000);
-
-        //NOME - Já existe?
-        if (!$this->erro && $metodo != 'Model::alterar') {
-            $sql = "SELECT 1 FROM EVENTO WHERE TITULO = '{$this->dado['TITULO']}'";
-            $this->paginacao = false;
-            if ($this->listarRetorno($sql)) {
-                $this->erro['Título'] = 'Já cadastrado';
-            }
+            $this->addOrder('DATA_PUBLICACAO DESC');
+            return $this->listaRetorno($sql);
         }
-
-        return $this->dadosValidacao();
     }
 
 }

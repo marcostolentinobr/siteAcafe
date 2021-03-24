@@ -5,9 +5,28 @@ class Login extends Controller {
     protected $descricao = 'Login';
     protected $acaoDescricao = 'Acessar';
     protected $listarMostrar = false;
-    protected $listarLargura = 200;
+    protected $sistemaLargura = 200;
     protected $mostrarDescricaoAcao = false;
     protected $formularioLargura = 0;
+
+    protected function validaSetDados() {
+
+        //CPF  - numero, obrigatório e 11 digitos
+        $this->dado['CPF'] = campo($_POST['CPF'], 'I');
+        if (!cpfValidar($this->dado['CPF'])) {
+            $this->erro['CPF'] = ' inválido ';
+        }
+
+        //SENHA  - obrigatório de 3 ate 20 caracteres
+        $this->dado['SENHA'] = trim($_POST['SENHA']);
+        $this->campoValidacao('SENHA', 20, true, false, 3);
+
+        return $this->dadosValidacao();
+    }
+
+    public function acessar() {
+        require_once RAIZ . '/Views/template/templatePadrao.php';
+    }
 
     public function sair($redirecionar = true) {
         session_destroy();
@@ -27,27 +46,21 @@ class Login extends Controller {
             if ($this->acaoDescricaoPost == 'Acessar') {
                 //Caso for acessar já destruir a sessão
                 $this->sair(false);
-
-                //Dados
-                $dado = $this->Model->dado($_POST, __METHOD__);
-
-                //Where
-                $this->where = [
-                    'CPF' => $dado['CPF'],
-                    'SENHA' => $dado['SENHA']
-                ];
-
+                $this->validaSetDados();
+             
                 //Executa
-                $this->dado = @$this->Model->listar($this->where, true)[0];
+                $this->Model->addWhere('CPF', $this->dado['CPF']);
+                $this->Model->addWhere('SENHA', $this->dado['SENHA']);
+                $this->dado = @$this->Model->listar()[0];
 
                 //Caso existe usuario e senha salva na sessão
                 if ($this->dado) {
                     $_SESSION['USUARIO'] = $this->dado;
-                    header('Location: ' . URL . 'Evento/listar');
+                    header('Location: ' . URL);
                 }
                 //Caso contrário mostrar que os dados não conferem
                 else {
-                    throw new Exception("<div style='color: black'>Dados não conferem</div>");
+                    throw new Exception("<div style='color: black'>Dados não conferem ou sem permissão</div>");
                 }
 
                 $this->msgOk = @$_SESSION['msgOk'] = 'Acesso autorizado';
@@ -56,10 +69,6 @@ class Login extends Controller {
         } catch (Exception $ex) {
             $this->msgException = $ex->getMessage();
         }
-    }
-
-    public function acessar() {
-        require_once RAIZ . '/Views/templatePadrao.php';
     }
 
 }

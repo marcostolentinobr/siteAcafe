@@ -1,219 +1,108 @@
 <?php
 
-class Model {
+class Model extends Conexao {
 
-    private $pdo;
-    private $order = '';
-    protected $dado;
-    protected $erro;
-    public $linhasTotal;
-    public $linhasTotalMomento;
+    protected $valorBuscar;
     public $pagina_total = 8;
     public $buscarCampos = [];
     public $paginacao = true;
+    public $valorChave = '';
+    public $keyChave = false;
 
-    public function __construct($pdo = '', $paginacao = true) {
-        if ($pdo) {
-            $this->pdo = $pdo;
-        }
-        $this->pdo = $this->pdo();
+    public function __construct($pdo = '', $valorBuscar = '', $paginacao = true) {
+        parent::__construct($pdo);
+        $this->valorChave = @$_POST[$this->ID_CHAVE];
+        $this->valorBuscar = $valorBuscar;
         $this->paginacao = $paginacao;
     }
 
-    public function ultimoInsertId() {
-        //Windows
-        if (DB_LIB == 'sqlsrv') {
-            return $this->pdo->lastInsertId();
-        }
-        $retorno = $this->listarRetorno('SELECT LAST_INSERT_ID() AS ID');
-        return $retorno[0]['ID'];
-    }
-
-    public function getDados() {
-        $this->dado[$this->chave] = $_POST[$this->chave];
-        return $this->dado;
-    }
-
-    //DADOS
-    protected function dado($dado, $metodo = __METHOD__) {
-        return [];
-    }
-
-    public function pdo() {
-        try {
-            if ($this->pdo) {
-                return $this->pdo;
-            }
-
-            //GERAL
-            $hostServer = ':host=' . DB_HOST;
-            $nameDb = ';dbname=' . DB_NAME;
-            $charset = ';charset=' . DB_CHARSET;
-
-            //SQL SERVER 
-            if (DB_LIB == 'sqlsrv') {
-                $hostServer = ':Server=' . DB_HOST;
-                $nameDb = ';Database=' . DB_NAME;
-                $charset = '';
-            }
-            
-            $this->pdo = new PDO(DB_LIB . $hostServer . $nameDb . $charset, DB_USER, DB_PASS);
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            //pr($e);
-            exit('<br><b>Erro de conexao. Entre em contato</b>');
-        }
-        return $this->pdo;
-    }
-
-    private function dadosQry($insert = false, $dados) {
-        $ITEM = [];
-        $ITEM['sintaxe'] = [];
-        $ITEM['valores'] = [];
-        foreach ($dados as $coluna => $valor) {
-            if (!empty($valor) || $valor === '0') {
-                if ($insert) {
-                    $ITEM['sintaxe'][] = "$coluna";
+    private function setBuscarLista() {
+        if (campo($this->valorBuscar)) {
+            $busca = '';
+            foreach ($this->buscarCampos as $ind => $campo) {
+                if ($ind == 0) {
+                    $busca = "( $campo LIKE '%$this->valorBuscar%'";
                 } else {
-                    $ITEM['sintaxe'][] = "$coluna=:$coluna";
+                    $busca .= " OR $campo LIKE '%$this->valorBuscar%'";
                 }
-                $key = ":$coluna";
-                $ITEM['valores'][$key] = $valor === 'NULL' ? null : $valor;
             }
+            $this->addWhere('', $busca . ' )', ' ');
         }
-        return $ITEM;
     }
 
-    public function where($valores) {
-        $where = '';
-        if ($valores) {
-            $dado = $this->dadosQry(false, $valores);
-            $where = ' WHERE ' . implode(' AND ', $dado['sintaxe']);
-            $valores = $dado['valores'];
+    private function setOrdenarLista() {
+        if (isset($_GET['order'])) {
+            $campoOrder = explode('@', $_GET['order']);
+            $this->order = array_merge(["$campoOrder[0] $campoOrder[1]"], $this->order);
         }
-
-        //Buscar
-        $buscar = campo(@$_POST['Buscar']);
-        if ($buscar && $this->buscarCampos) {
-            foreach ($this->buscarCampos as $campo) {
-                @$whereBuscar[] = " $campo LIKE '%$buscar%'";
-            }
-        }
-
-        if ($this->paginacao) {
-            if (isset($whereBuscar)) {
-                $whereBuscar = implode(' OR ', $whereBuscar);
-            }
-
-            if ($where && isset($whereBuscar)) {
-                $where .= " AND ($whereBuscar) ";
-            }
-
-            if (!$where && isset($whereBuscar)) {
-                $where = " WHERE $whereBuscar ";
-            }
-        }
-
-        return $where;
     }
 
-    public function addOrder($str) {
-        $this->order = ' ORDER BY ' . $str;
-    }
-
-    public function prepareExecute($sql, $dado = [], $listar = false) {
-        $acao = $this->pdo->prepare($sql);
-        $execute = $acao->execute($dado);
-        $this->linhasTotal = $acao->rowCount();
-        return ($listar ? $acao : $execute);
-    }
-
-    public function incluir() {
-        $dado = coalesce($this->dado, $this->dado($_POST, __METHOD__));
-        $dadoIncluir = $this->dadosQry(true, $dado);
-        $sql = "INSERT INTO $this->tabela (" . implode(", ", $dadoIncluir['sintaxe']);
-        $sql .= ') VALUES ( :' . implode(", :", $dadoIncluir['sintaxe']) . ')';
-        return $this->prepareExecute($sql, $dadoIncluir['valores']);
-    }
-
-    public function excluir() {
-        $valores = [$this->chave => coalesce(@$this->dado[$this->chave], @$_POST[$this->chave])];
-        $sql = "DELETE FROM $this->tabela " . $this->where($valores);
-        return $this->prepareExecute($sql, $valores);
-    }
-
-    public function alterar($where = [], $dado = []) {
-        $where = coalesce($where, [$this->chave => $_POST[$this->chave]]);
-        $dado = coalesce($dado, $this->dado, $this->dado($_POST, __METHOD__));
-        $dadoAlterar = $this->dadosQry(false, $dado);
-        $whereAlterar = $this->dadosQry(false, $where);
-        $sql = "UPDATE $this->tabela SET " . implode(", ", $dadoAlterar['sintaxe']);
-        $sql .= ' WHERE ' . implode(' AND ', $whereAlterar['sintaxe']);
-        return $this->prepareExecute($sql, array_merge($dadoAlterar['valores'], $whereAlterar['valores']));
-    }
-
-    public function listar($valores = [], $todos = false) {
-        $sql = "SELECT *, 0 AS ITEM_UTILIZADO FROM $this->tabela";
-        if (!$this->order) {
-            $this->addOrder($this->chave . ' DESC ');
-        }
-        return $this->listarRetorno($sql, $valores, $todos);
-    }
-
-    public function listarRetorno($sql, $valores = [], $todos = true) {
-
-        $limite = '';
+    private function setPaginarLista() {
+        $limit = '';
         if ($this->paginacao) {
             $inicio = (coalesce(@$_GET['pagina'], 1) - 1) * $this->pagina_total;
-            $limite = " LIMIT $inicio,$this->pagina_total ";
-        }
-
-        $acao = $this->prepareExecute($sql . $this->where($valores) . $this->order . $limite, $valores, true);
-        $this->linhasTotalMomento = $this->linhasTotal;
-        if ($this->paginacao) {
-            $total = $this->prepareExecute($sql . $this->where($valores) . $this->order, $valores, true);
-        }
-        if ($todos) {
-            return $acao->fetchAll(PDO::FETCH_ASSOC);
-        }
-        return $acao;
-    }
-
-    public function dadosValidacao() {
-        if ($this->erro) {
-            $mensagem = '';
-            foreach ($this->erro as $campo => $msg) {
-                $mensagem .= "<b>$campo</b>: <small>" . ucfirst($msg) . "</small><br>";
+            $limit = " LIMIT $inicio,$this->pagina_total ";
+            if (ehSqlServer()) {
+                if (!$this->order) {
+                    $this->addOrder("$this->ID_CHAVE DESC");
+                }
+                $limit = " OFFSET $inicio ROWS FETCH NEXT $this->pagina_total ROWS ONLY ";
             }
-            throw new Exception("<div style='color: black'>$mensagem</div>");
         }
-        return $this->dado;
+        return $limit;
     }
 
-    public function campoValidacao($campoNome, $digitoMaximo = 100, $obrigatorio = true, $numero = false, $digitoMinimo = '') {
-        $str = trim($this->dado[$campoNome]);
-        $campoNome = ucwords(mb_strtolower(str_replace('_', ' ', $campoNome)));
+    protected function listaRetorno($sql) {
+        $this->setBuscarLista();
+        $this->setOrdenarLista();
+        $limit = $this->setPaginarLista();
 
-        if (!$str && $obrigatorio) {
-            @$this->erro[$campoNome] .= ' obrigatório, ';
+        $retorno = $this->getListar($sql, $limit);
+        if ($retorno && $this->keyChave) {
+            $retornoNovo = [];
+            foreach ($retorno as $dado) {
+                $retornoNovo[$dado[$this->ID_CHAVE]] = $dado;
+            }
+            $retorno = $retornoNovo;
         }
 
-        //MAXIMO CARACTERES ====================================================
-        if (strlen($str) > $digitoMaximo) {
-            @$this->erro[$campoNome] .= " até $digitoMaximo digitos, ";
+        $this->linhasTotalMomento = $this->linhasTotal;
+        //Apenas para declarar a quantidade de totais de linhas sem a paginação
+        if ($this->paginacao) {
+            $this->getListar($sql);
+        }
+        return $retorno;
+    }
+
+    public function descricaoExistente($valores = []) {
+        if ($this->valorChave) {
+            $this->addWhere($this->ID_CHAVE, $this->valorChave, '!=');
         }
 
-        //MAXIMO CARACTERES ====================================================
-        if ($digitoMinimo && strlen($str) < $digitoMinimo) {
-            @$this->erro[$campoNome] .= " mínimo de $digitoMinimo digitos, ";
+        foreach ($valores as $campo => $valor) {
+            $this->addWhere($campo, $valor);
         }
 
-        //NUMERO ===============================================================
-        if ($numero && !is_numeric($str)) {
-            @$this->erro[$campoNome] .= " tem que ser um número, ";
-        }
+        return count($this->listar());
+    }
 
-        return true;
+    public function listar() {
+        $sql = "SELECT * FROM $this->tabela";
+        return $this->listaRetorno($sql);
+    }
+
+    public function incluir($valores, $tabela = '') {
+        return parent::incluir(coalesce($tabela, $this->tabela), $valores);
+    }
+
+    public function alterar($valores, $tabela = '') {
+        $this->addWhere($this->ID_CHAVE, $this->valorChave, 'updateExcluir');
+        return parent::alterar(coalesce($tabela, $this->tabela), $valores);
+    }
+
+    public function excluir($tabela = '') {
+        $this->addWhere($this->ID_CHAVE, $this->valorChave, 'updateExcluir');
+        return parent::excluir(coalesce($tabela, $this->tabela));
     }
 
 }

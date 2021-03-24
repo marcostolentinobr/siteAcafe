@@ -31,10 +31,10 @@
     <folder id="FOLTAB12" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB14" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX6" populated="true" UUID="795ff317-7e77-45b5-9bca-dc69e4dcfc19" clustered="false" name="USUARIO_pk" physicalName="usuario_pk" primaryKeyIndex="true" unique="false" >
+    <index id="IDX6" populated="true" UUID="795ff317-7e77-45b5-9bca-dc69e4dcfc19" clustered="false" name="USUARIO_pk" physicalName="USUARIO_pk" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC7" populated="true" UUID="e0629bb1-a457-4c60-a2be-383046886681" ascendingOrDescending="UNSPECIFIED" column-ref="COL2" name="ID_USUARIO" physicalName="ID_USUARIO" />
     </index>
-    <index id="IDX8" populated="true" UUID="ac1cddbd-ea2d-4183-8a38-b0038ca8443f" clustered="false" name="USUARIO_idx" physicalName="usuario_idx" primaryKeyIndex="false" unique="true" >
+    <index id="IDX8" populated="true" UUID="ac1cddbd-ea2d-4183-8a38-b0038ca8443f" clustered="false" name="USUARIO_idx" physicalName="USUARIO_idx" primaryKeyIndex="false" unique="true" >
      <index-column id="IDC9" populated="true" UUID="fcd0e4fe-60ee-4a76-aa1f-bfc4659ba12d" ascendingOrDescending="UNSPECIFIED" column-ref="COL3" name="CPF" physicalName="CPF" />
     </index>
    </folder>
@@ -48,7 +48,7 @@
     <column id="COL12" populated="true" UUID="e5cdba1a-8ba0-4fc4-911f-4863a22f6d64" autoIncrement="false" autoIncrementSequenceName="EVENTO_CATEGORIA_seq" defaultValue="" name="CATEGORIA" nullable="0" physicalName="CATEGORIA" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL13" populated="true" UUID="f1ebc3b9-11d0-4628-9ee1-314da4141070" autoIncrement="false" autoIncrementSequenceName="EVENTO_TITULO_seq" defaultValue="" name="TITULO" nullable="0" physicalName="TITULO" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL13" populated="true" UUID="f1ebc3b9-11d0-4628-9ee1-314da4141070" autoIncrement="false" autoIncrementSequenceName="EVENTO_TITULO_seq" defaultValue="" name="TITULO" nullable="0" physicalName="TITULO" precision="150" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     <column id="COL14" populated="true" UUID="209fe4b5-eec7-4ed9-a9a4-896e2f908997" autoIncrement="false" autoIncrementSequenceName="NOTICIA_New Column_seq" defaultValue="" name="TEXTO" nullable="0" physicalName="TEXTO" precision="8000" referenceCount="6" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -66,10 +66,10 @@
     <folder id="FOLTAB102" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB104" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX17" populated="true" UUID="4c1eac51-a932-4052-ab25-4e0468a8ca09" clustered="false" name="EVENTO_pk" physicalName="evento_pk" primaryKeyIndex="true" unique="false" >
+    <index id="IDX17" populated="true" UUID="4c1eac51-a932-4052-ab25-4e0468a8ca09" clustered="false" name="EVENTO_pk" physicalName="EVENTO_pk" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC18" populated="true" UUID="b3472af0-c2fc-49b4-ab91-66bb631c651b" ascendingOrDescending="UNSPECIFIED" column-ref="COL11" name="ID_EVENTO" physicalName="ID_EVENTO" />
     </index>
-    <index id="IDX19" populated="true" UUID="f51c7797-b4a3-4ed2-9606-076744ebfc04" clustered="false" name="EVENTO_idx" physicalName="evento_idx" primaryKeyIndex="false" unique="true" >
+    <index id="IDX19" populated="true" UUID="f51c7797-b4a3-4ed2-9606-076744ebfc04" clustered="false" name="EVENTO_idx" physicalName="EVENTO_idx" primaryKeyIndex="false" unique="true" >
      <index-column id="IDC20" populated="true" UUID="41ed5ad9-5c20-4102-9b0f-bf11c087a490" ascendingOrDescending="UNSPECIFIED" column-ref="COL13" name="TITULO" physicalName="TITULO" />
     </index>
    </folder>
@@ -77,7 +77,7 @@
   <relationships>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.MySqlDDLGenerator" allow-connection="false"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.SQLServer2005DDLGenerator" allow-connection="false"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
  <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
