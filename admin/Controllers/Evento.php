@@ -49,6 +49,10 @@ class Evento extends Controller {
         //TEXTO 
         $this->dado['TEXTO'] = campo($_POST['TEXTO']);
         $this->campoValidacao('TEXTO', 8000);
+        
+        //TEXTO 
+        $this->dado['IMAGEM_APARECER_DETALHE'] = campo($_POST['IMAGEM_APARECER_DETALHE']);
+        $this->campoValidacao('IMAGEM_APARECER_DETALHE', 1);
 
         //NOME unico
         if (!$this->erro) {

@@ -13,7 +13,7 @@ $pdo = new Conexao();
 //pr($pdo);
 //categoria
 
-if($_GET['CATEGORIA'] == 'Notícia' && DB_HOST == '10.0.0.3'){
+if ($_GET['CATEGORIA'] == 'Notícia' && DB_HOST == '10.0.0.3') {
     $_GET['CATEGORIA'] = 'Noticia';
 }
 
@@ -51,7 +51,9 @@ if (isset($_GET['ID_EVENTO'])) {
     <center>
         <h1 style="font-weight: bold; font-size: 30px; line-height: 35px"><?= $EVENTO['TITULO'] ?></h1>
         <br>
-        <img style='max-width: 255px; max-height: 200px' src='admin/arquivos/<?= $EVENTO['IMAGEM'] ?>' ><br>
+        <? if ($EVENTO['IMAGEM_APARECER_DETALHE'] != 'N') { ?>
+            <img style='max-width: 255px; max-height: 200px' src='admin/arquivos/<?= $EVENTO['IMAGEM'] ?>' ><br> 
+        <? } ?>
         <div style="border: 0px solid; text-align: left; font-size: 15px">    
             <small style="font-size: 10px"> 
                 Publicada em <?= dataFormatar($EVENTO['DATA_PUBLICACAO'], 'DM', false) ?>
@@ -64,10 +66,10 @@ if (isset($_GET['ID_EVENTO'])) {
     <?
 } else {
     foreach ($EVENTO as $evento) {
-        
+
         $attr = " target='_blank' href='$evento[TEXTO]' ";
         $cssHeigth = ' height: 50px; text-align: center ';
-        if (in_array(@$_GET['CATEGORIA'],['Notícia','Noticia'])) {
+        if (in_array(@$_GET['CATEGORIA'], ['Notícia', 'Noticia'])) {
             $attr = " onclick='noticiaDetalhe($evento[ID_EVENTO])' ";
             $cssHeigth = ' height: 66px ';
         }

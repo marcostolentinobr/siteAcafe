@@ -34,6 +34,17 @@
     <?= htmlentities("<a href='https://acafe.org.br' target='_blank'>DESCRIÇÃO</a>"); ?><br>
     <span style="color:blue">onde é href coloque o link do site e altere a descrição em DESCRIÇÃO</span>
 </small>
+
+<!-- IMAGEM_APARECER_DETALHE -->
+<? $campo = ['IMAGEM_APARECER_DETALHE', 'Imagem no detalhe', 'select', 100, ' required '] ?>
+<label for="<?= $campo[0] ?>"><?= $campo[1] ?>:</label>
+<select id="<?= $campo[0] ?>" name="<?= $campo[0] ?>" <?= $campo[4] ?>>
+    <option value="S" <?= (@$this->dado[$campo[0]] == 'S' ? 'selected' : '') ?>>Sim</option>
+    <option value="N" <?= (@$this->dado[$campo[0]] == 'N' ? 'selected' : '') ?>>Não</option>
+</select>
+
+
+
 <!-- IMAGEM -->
 <? $campo = ['IMAGEM[]', 'Imagem de chamada <small>máximo em 255x200 </small>', 'file'] ?>
 <label><?= $campo[1] ?></label>

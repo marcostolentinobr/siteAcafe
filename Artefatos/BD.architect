@@ -57,7 +57,10 @@
     <column id="COL15" populated="true" UUID="28578114-3d0e-4293-97cd-1092a9a49804" autoIncrement="false" autoIncrementSequenceName="EVENTO_IMAGEM_seq" defaultValue="" name="IMAGEM" nullable="1" physicalName="IMAGEM" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL16" populated="true" UUID="a9f2c6ca-774b-4704-acd4-dde5e90cebcf" autoIncrement="false" autoIncrementSequenceName="EVENTO_DATA_PUBLICACAO_seq" defaultValue="CURRENT_TIMESTAMP" name="DATA_PUBLICACAO" nullable="0" physicalName="DATA_PUBLICACAO" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+    <column id="COL16" populated="true" UUID="74d82178-772a-4f34-92bf-d82fdd88a563" autoIncrement="false" autoIncrementSequenceName="EVENTO_IMAGEM_APARECER_DETALHE_seq" defaultValue="" name="IMAGEM_APARECER_DETALHE" nullable="1" physicalName="IMAGEM_APARECER_DETALHE" precision="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+     <remarks></remarks>
+    </column>
+    <column id="COL17" populated="true" UUID="a9f2c6ca-774b-4704-acd4-dde5e90cebcf" autoIncrement="false" autoIncrementSequenceName="EVENTO_DATA_PUBLICACAO_seq" defaultValue="CURRENT_TIMESTAMP" name="DATA_PUBLICACAO" nullable="0" physicalName="DATA_PUBLICACAO" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
      <remarks></remarks>
     </column>
     </folder>
@@ -66,18 +69,18 @@
     <folder id="FOLTAB102" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB104" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX17" populated="true" UUID="4c1eac51-a932-4052-ab25-4e0468a8ca09" clustered="false" name="EVENTO_pk" physicalName="EVENTO_pk" primaryKeyIndex="true" unique="false" >
-     <index-column id="IDC18" populated="true" UUID="b3472af0-c2fc-49b4-ab91-66bb631c651b" ascendingOrDescending="UNSPECIFIED" column-ref="COL11" name="ID_EVENTO" physicalName="ID_EVENTO" />
+    <index id="IDX18" populated="true" UUID="4c1eac51-a932-4052-ab25-4e0468a8ca09" clustered="false" name="EVENTO_pk" physicalName="EVENTO_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC19" populated="true" UUID="b3472af0-c2fc-49b4-ab91-66bb631c651b" ascendingOrDescending="UNSPECIFIED" column-ref="COL11" name="ID_EVENTO" physicalName="ID_EVENTO" />
     </index>
-    <index id="IDX19" populated="true" UUID="f51c7797-b4a3-4ed2-9606-076744ebfc04" clustered="false" name="EVENTO_idx" physicalName="EVENTO_idx" primaryKeyIndex="false" unique="true" >
-     <index-column id="IDC20" populated="true" UUID="41ed5ad9-5c20-4102-9b0f-bf11c087a490" ascendingOrDescending="UNSPECIFIED" column-ref="COL13" name="TITULO" physicalName="TITULO" />
+    <index id="IDX20" populated="true" UUID="f51c7797-b4a3-4ed2-9606-076744ebfc04" clustered="false" name="EVENTO_idx" physicalName="EVENTO_idx" primaryKeyIndex="false" unique="true" >
+     <index-column id="IDC21" populated="true" UUID="41ed5ad9-5c20-4102-9b0f-bf11c087a490" ascendingOrDescending="UNSPECIFIED" column-ref="COL13" name="TITULO" physicalName="TITULO" />
     </index>
    </folder>
   </table>
   <relationships>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.SQLServer2005DDLGenerator" allow-connection="false"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.SQLServer2005DDLGenerator" allow-connection="true"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
  <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
