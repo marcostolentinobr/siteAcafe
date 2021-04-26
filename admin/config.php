@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 session_start();
 
-require_once __DIR__ . '/../../../parametros/acafe_bd_site_sa.php';
+require_once __DIR__ . '/../../../parametros/bd_site.php';
 
 //Title
 define('TITULO', 'Eventos');
