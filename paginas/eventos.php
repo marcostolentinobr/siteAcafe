@@ -36,7 +36,7 @@ if (@$_GET['LIMIT']) {
 }
 
 $sql = "
-    SELECT $top * 
+    SELECT $top *, CAST(TEXTO AS VARCHAR(MAX)) AS TEXTO_TOTAL 
       FROM EVENTO 
 ";
 
@@ -59,7 +59,7 @@ if (isset($_GET['ID_EVENTO'])) {
                 Publicada em <?= dataFormatar($EVENTO['DATA_PUBLICACAO'], 'DM', false) ?>
             </small>
             <br><br>
-            <?= campo($EVENTO['TEXTO'], 'T') ?>
+            <?= campo($EVENTO['TEXTO_TOTAL'], 'T') ?>
         </div>
         <BR>
     </center>
