@@ -4,7 +4,7 @@
 
         <!--cache -->
         <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
-        <META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 jul 2006 01:01:03 GMT">
+        <META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 jul 2006 01:01:04 GMT">
 
         <!-- 
         Compass Template
@@ -93,14 +93,11 @@
                             <div class="col-md-10 col-sm-10 col-xs-8">
                                 <div class="menu text-right hidden-sm hidden-xs">
                                     <ul>
-                                        <!-- <li><a href="#noticia">Notícias</a></li> -->
                                         <li><a href="#vestibular">Vestibulares</a></li>
                                         <li><a href="#seletivo">Seletivos</a></li>
                                         <li><a href="#concurso">Concursos</a></li>
                                         <li><a href="#instituicao">Instituições</a></li>
-                                        <li><a href="#" data-valor="camaras" class="camara">Câmaras</a></li>
                                         <li><a href="#acafe">ACAFE</a></li>
-                                        <!-- <li><a href="#contact">Contato</a></li> -->
                                     </ul>
                                 </div> 
                             </div>
@@ -113,14 +110,11 @@
                             <a href="#" class="toggle-menu fa fa-bars"></a>
                             <div class="menu">
                                 <ul>
-                                    <!-- <li><a href="#noticia">Notícias</a></li> -->
                                     <li><a href="#vestibular">Vestibulares</a></li>
                                     <li><a href="#seletivo">Seletivos</a></li>
                                     <li><a href="#concurso">Concursos</a></li>
                                     <li><a href="#instituicao">Instituições</a></li>
-                                    <li><a href="#" data-valor="camaras" class="camara" >Câmaras</a></li>
                                     <li><a href="#acafe">ACAFE</a></li>
-                                    <!-- <li><a href="#contact">Contato</a></li> -->
                                 </ul>
                             </div> 
                         </div> 
@@ -138,7 +132,7 @@
         <div class="flexslider">
             <ul class="slides">
                 <!-- usar 1920x350px com a largura da arte centralizada no maximo de 992px -->
-				<li>
+                <li>
                     <a href="https://acafe.org.br/concurso/sua/2021/2/site" target="_blank">
                         <img src="https://acafe.org.br/site/imagens/banner/sua-inscricao-212.png">
                     </a>
@@ -152,6 +146,7 @@
         </div>
         <!-- fim do carrocel -->
 
+        <!-- comunicado -->
         <div id="comunicado" class="modal" tabindex="-1" style="z-index: 9999999999" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content" style="font-size: 15px">
@@ -186,7 +181,6 @@
                         </p>
                     </div>
                     <div class="modal-footer">
-                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                     </div>
                 </div>
@@ -196,12 +190,6 @@
         <!-- notícias -->
         <div id="noticia" class="section-cotent" style="padding-top: 15px">
             <div class="container">
-				<!--
-                <div class="title-section text-center" style="margin-bottom: 0">
-                    <h2>Notícias</h2>
-                    <span></span>
-                </div> 
-				-->
                 <div class="row" style="margin: 0; padding: 0">
                     <div class="our-team Noticia" style="margin: 0; padding: 0">
                         <!-- local dos itens -->
@@ -422,33 +410,68 @@
                     <h2>ACAFE</h2>
                     <span></span>
                 </div>
-
                 <div class="row">
 
                     <!-- sobre -->
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-sm-4">
                         <div class="service-item">
                             <div class="service-header">
-                                <i class="fa fa-umbrella"></i>
-                                <h3>Sobre</h3>
+                                <h3 style="font-weight: bold">Sobre</h3>
                             </div>
                             <div class="service-description">
                                 A ACAFE é uma sociedade civil sem fins lucrativos que congrega as fundações educacionais 
                                 criadas no Estado de Santa Catarina por lei dos poderes públicos estaduais e municipais. 
                                 O objetivo desta união é promover o intercâmbio administrativo, técnico e científico 
-                                entre as Instituições de Educação Superior.<br>
-                                <a rel="nofollow" data-valor="sobre" style="cursor: pointer" id="sobre">Ler mais</a>
+                                entre as Instituições de Educação Superior.
                             </div>
                         </div> 
                     </div> 
+
+                    <div id="acafe-modal" class="modal" tabindex="-1" style="z-index: 9999999999" role="dialog">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content" style="font-size: 15px">
+                                <div class="modal-header" style="text-align: center">
+                                    <strong style="font-weight: bold;">Sobre a ACAFE</strong>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p> 
+                                        Com o objetivo de desenvolver o ensino superior em Santa Catarina, 16 Fundações 
+                                        Educacionais criadas pelos municípios se uniram em torno da constituição de um 
+                                        órgão com as atribuições de planejar, articular e coordenar ações integradas entre 
+                                        elas. Nasce então, em 2 de maio de 1974, a Associação Catarinense das Fundações 
+                                        Educacionais – ACAFE, que vem se fortalecendo até os dias atuais.
+                                    </p>
+                                    <br>
+                                    <p>
+                                        Das 15 Fundações iniciais, mantenedoras de Instituições de Ensino Superior – IES 
+                                        isoladas, o Sistema ACAFE evoluiu para configurar, hoje, um conjunto de 16 IES, 
+                                        sendo 11 Universidades e 5 Centros Universitários. A ACAFE é uma sociedade civil 
+                                        sem fins lucrativos que congrega as fundações educacionais criadas no Estado de 
+                                        Santa Catarina por lei dos poderes públicos estaduais e municipais.
+                                    </p>
+                                    <br>
+                                    <p>
+                                        O objetivo desta união é promover o intercâmbio administrativo, técnico e 
+                                        científico entre as Instituições de Educação Superior, na busca de soluções para 
+                                        problemas comuns nas áreas de ensino, pesquisa, extensão e administração.   
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- fim sobre -->
 
                     <!-- missao -->
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-sm-4">
                         <div class="service-item">
                             <div class="service-header">
-                                <i class="fa fa-cogs"></i>
-                                <h3>Missão</h3>
+                                <h3 style="font-weight: bold">Missão</h3>
                             </div>
                             <div class="service-description">
                                 Desenvolver o ensino, ciência, tecnologia e inovação 
@@ -461,11 +484,10 @@
                     <!-- fim missao -->
 
                     <!-- visao -->
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-sm-4">
                         <div class="service-item">
                             <div class="service-header">
-                                <i class="fa fa-heart"></i>
-                                <h3>Visão</h3>
+                                <h3 style="font-weight: bold">Visão</h3>
                             </div>
                             <div class="service-description">
                                 Ser reconhecido Nacional e Internacionalmente como 
@@ -478,32 +500,1268 @@
                     </div>
                     <!-- fim visao -->
 
-                    <!-- memooria -->
-                    <div class="col-md-3 col-sm-6">
-                        <div class="service-item">
-                            <div class="service-header">
-                                <i class="fa fa-desktop"></i>
-                                <h3>Memória</h3>
+                </div>
+
+                <div class="row">
+                    <br>
+                    <a href="#" data-toggle="modal" data-target="#acafe-modal">Mais sobre</a> |
+                    <a href="#" data-toggle="modal" data-target="#conselhos-modal">Conselhos</a> | 
+                    <a href="#" data-toggle="modal" data-target="#camara-modal">Câmeras</a>
+                </div>
+
+                <div class="row">
+                    <br>
+                    <h4 class="widget-title">Memória</h4>
+                    <p>
+                        Em 1974, os presidentes das fundações criadas por lei municipal e da fundação criada pelo Estado
+                        constituíram a ACAFE – Associação Catarinense das Fundações Educacionais, entidade sem fins
+                        lucrativos, com a missão de promover a integração dos esforços de consolidação das instituições
+                        de ensino superior por elas mantidas, de executar atividades de suporte técnico-operacional e de
+                        representá-las junto aos órgãos dos Governos Estadual e Federal.
+                    </p>
+                </div>
+
+                <div class="row">
+                    <p>&nbsp;</p>
+                    <div class="our-team">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="team-member">
+                                <div class="member-img">
+                                    <img style="width: 270px; height: 270px" src="imagens/dirigentes/presidente.png">
+                                </div> 
                             </div>
-                            <div class="service-description">
-                                Em 1974, os presidentes das fundações criadas por lei municipal e da fundação criada pelo Estado
-                                constituíram a ACAFE – Associação Catarinense das Fundações Educacionais, entidade sem fins
-                                lucrativos, com a missão de promover a integração dos esforços de consolidação das instituições
-                                de ensino superior por elas mantidas, de executar atividades de suporte técnico-operacional e de
-                                representá-las junto aos órgãos dos Governos Estadual e Federal.
-                                <br><a rel="nofollow" style="cursor: pointer" data-valor="memoria" id="memoria">Ler mais</a>
+                            <div class="inner-content">
+                                <h5>Presidente (Desde 2020)</h5>
+                                <span>Prof. Dr. Aristídes Cimadon</span>
                             </div>
                         </div>
                     </div> 
-                    <!-- fim memoria -->
-
-                </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="team-member">
+                            <div class="member-img">
+                                <img style="width: 270px; height: 270px" src="imagens/dirigentes/vice.png">
+                            </div>
+                            <div class="inner-content">
+                                <h5>Vice-Presidente (Desde 2020)</h5>
+                                <span>Profª. Dra. Luciane Bisognin Ceretta</span>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-md-4 col-sm-6">
+                        <div class="team-member">
+                            <div class="member-img">
+                                <img style="width: 270px; height: 270px" src="imagens/dirigentes/secretario.png">
+                            </div>
+                            <div class="inner-content">
+                                <h5>Secretário Executivo (Desde 2014)</h5>
+                                <span>Prof. Dr. Paulo Ivo Koehntopp</span>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <br>
+                <a href="#" data-toggle="modal" data-target="#dirigentes-modal">Dirigentes anteriores</a>
             </div> 
         </div>
         <!-- fim acafe -->
 
-        <!-- camara -->
-        <div style="display: none" id="camara-section"  class="section-cotent"></div>
+        <!-- comunicado -->
+        <div id="conselhos-modal" class="modal" tabindex="-1" style="z-index: 9999999999" role="dialog">
+            <div class="modal-dialog modal-lg" role="document" style="font-size: 15px; width: 1024px">
+                <div class="modal-content" >
+                    <div class="modal-header" style="text-align: center">
+                        <strong style="font-weight: bold;">Conselhos</strong>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="row">
+                            <div class="col-lg-6" >
+                                <h1 style="font-weight: bold">Conselho Deliberativo</h1>
+                                <br>
+
+                                <h4>
+                                    Prof. Dr. Claudio Alcides Jacoski<br>
+                                    <small>Reitor da UNOCHAPECÓ</small>
+                                </h4>
+
+                                <h4>
+                                    Prof. MSc. Márcia Cristina Sardá Espíndola<br>
+                                    <small>Reitora da FURB</small>
+                                </h4>
+
+                                <h4>
+                                    Prof. MSc. Rosemari Glatz<br>
+                                    <small>Reitora da UNIFEBE</small>
+                                </h4>
+
+                                <h4>
+                                    Prof. Dr. Valdir Cechinel Filho<br>
+                                    <small>Reitor UNIVALI</small>
+                                </h4>
+
+                            </div>
+
+                            <div class="col-lg-6" >
+                                <h1 style="font-weight: bold">Conselho Fiscal</h1>
+                                <br>
+
+                                <div class="col-lg-6" >
+                                    <h3 style="font-weight: bold">Titulares</h3>
+
+                                    <h4>
+                                        Prof. MSc. Solange Salete Sprandel da Silva <br>
+                                        <small>Reitora da UnC</small>
+                                    </h4>
+
+                                    <h4>
+                                        Prof. MSc. Márcia Cristina Sardá Espíndola<br>
+                                        <small>Reitora da FURB</small>
+                                    </h4>
+
+                                    <h4>
+                                        Prof. Dr. Anderson Antonio Mattos Martins<br>
+                                        <small>Reitor da UNIARP</small>
+                                    </h4>
+
+                                    <h4>
+                                        Prof. Dr. Guilherme Valente de Souza<br>
+                                        <small>Reitor da UNIBAVE</small>
+                                    </h4>
+
+                                    <h4>
+                                        Prof. Alcir Teixeira<br>
+                                        <small>Reitor da UNIDAVI</small>
+                                    </h4>
+
+                                    <h4>
+                                        Prof. MSc. Kaio Henrique Coelho Amarante<br>
+                                        <small>Reitor da UNIPLAC</small>
+                                    </h4>
+                                </div>
+                                <div class="col-lg-6" >
+
+                                    <h3 style="font-weight: bold">Suplentes</h3>
+
+                                    <h4>
+                                        Prof. MSc. Diogo Benke<br>
+                                        <small>Reitor da CATÓLICA SC</small>
+                                    </h4>
+
+                                    <h4>
+                                        Prof. Dr. Dilmar Baretta<br>
+                                        <small>Reitor da UDESC</small>
+                                    </h4>
+
+                                    <h4>
+                                        Prof. Dr. Alexandre Cidral<br>
+                                        <small>Reitor da UNIVILLE</small>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- camara-modal -->
+        <div id="camara-modal" class="modal" tabindex="-1" style="z-index: 9999999999" role="dialog">
+            <div class="modal-dialog" role="document" style="font-size: 15px; width: 1024px">
+                <div class="modal-content" >
+                    <div class="modal-header" style="text-align: center">
+                        <strong style="font-weight: bold;">Câmaras Setoriais</strong>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <br>
+
+                        <div class="container">
+                            <div class="title-section text-center">                                
+                                <div class="row">
+                                    <div class="col-sm-4" >
+                                        <table style="text-align: left;" class="table table-hover table-striped table-bordered table-condensed">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2" style="font-weight: bold; font-size: 14px">
+                                                        Administração e Desenvolvimento Institucional
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-weight: bold; padding-right: 80px">IES</th>
+                                                    <th style="font-weight: bold">Representante</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th>UNOCHAPECÓ</th>
+                                                    <td>JOSÉ ALEXANDRE DE TONI</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>UNIBAVE</th>
+                                                    <td>DIMAS AILTON ROCHA</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>ACAFE</th>
+                                                    <td>PAULO IVO KOEHNTOPP</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>CATÓLICA</th>
+                                                    <td>CLEITON VAZ</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>FURB</th>
+                                                    <td>NAZARENO LOFFI SCHMOELLER</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>UDESC</th>
+                                                    <td>MARILHA DOS SANTOS</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>UDESC</th>
+                                                    <td>MATHEUS AZEVEDO FERREIRA FIDELIS</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>UnC</th>
+                                                    <td>LUCIANO BENDLIN</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>UNESC</th>
+                                                    <td>GISELE SILVEIRA COELHO LOPES</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>UNIARP</th>
+                                                    <td>JOLMAR LUIZ HAWERROTH</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>UNIDAVI</th>
+                                                    <td>MEHRAN RAMEZANALI</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>UNIFEBE</th>
+                                                    <td>SERGIO RUBENS FANTINI</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>UNIPLAC</th>
+                                                    <td>RAFAEL MAGNABOSCO</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>UNISUL</th>
+                                                    <td>ADEMAR SCHMITZ</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>UNISUL</th>
+                                                    <td>VALTER ALVES SCHMITZ NETO</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>UNIVALI</th>
+                                                    <td>CLEUNICE APARECIDA TRAI</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>UNIVILLE</th>
+                                                    <td>JOSÉ KEMPNER</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>UNOCHAPECÓ</th>
+                                                    <td>MÁRCIO DA PAIXÃO RODRIGUES</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>UNOESC</th>
+                                                    <td>RICARDO ANTONIO DE MARCO</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>USJ</th>
+                                                    <td>JANINE PACHECO DA LUZ</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="col-sm-4" >
+                                        <table style="text-align: left;" class="table table-hover table-striped table-bordered table-condensed">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2" style="font-weight: bold; font-size: 14px">
+                                                        Assuntos Jurídicos
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-weight: bold; padding-right: 80px">IES</th>
+                                                    <th style="font-weight: bold">Representante</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>UNIVILLE</td>
+                                                    <td>GILSON SÊMER GUIMARÃES</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ACAFE</td>
+                                                    <td>PAULO IVO KOEHNTOPP</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>CATÓLICA</td>
+                                                    <td>INDIUARA SAMPAIO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>FURB</td>
+                                                    <td>LUÍS ROBERTO SCHMITT JÚNIOR</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UDESC</td>
+                                                    <td>JULIANA LENGLER MICHEL</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UnC</td>
+                                                    <td>SIMONE DOS REIS BIELESKI MARQUES</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNESC</td>
+                                                    <td>JOÃO CARLOS MEDEIROS RODRIGUES JUNIOR</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIARP</td>
+                                                    <td>SAMUEL CARLOS LIMA</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIBAVE</td>
+                                                    <td>PEDRO ZILLI NETO</td> 
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIDAVI</td>
+                                                    <td>CÉLIO SIMÃO MARTIGNAGO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIFEBE</td>
+                                                    <td>RONALDO ULLER</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIPLAC</td>
+                                                    <td>ROBERTO RAMOS</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNISUL</td>
+                                                    <td>LESTER MARCANTONIO CAMARGO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNISUL</td>
+                                                    <td>TATIANA MENEGHEL</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIVALI</td>
+                                                    <td>RODRIGO DE CARVALHO</td> 
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIVILLE</td>
+                                                    <td>ANA CAROLINA AMORIM BUZZI</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNOCHAPECÓ</td>
+                                                    <td>RUDIMAR ROBERTO BORTOLOTTO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNOESC</td>
+                                                    <td>OSMAR DE MARCO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>USJ</td>
+                                                    <td>DIEGO PEREIRA ALVES</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="col-sm-4" >
+                                        <table style="text-align: left;" class="table table-hover table-striped table-bordered table-condensed">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2" style="font-weight: bold; font-size: 14px">
+                                                        Ensino de Graduação
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-weight: bold; padding-right: 80px">IES</th>
+                                                    <th style="font-weight: bold">Representante</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>IES</td>
+                                                    <td>Representante</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNOESC</td>
+                                                    <td>LINDAMIR GADLER</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIFEBE</td>
+                                                    <td>SIDNEI GRIPA</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>CATÓLICA</td>
+                                                    <td> ANADIR ELENIR PRADI VENDRUSCOLO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>FURB</td>
+                                                    <td>ROMEU HAUSMANN</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UDESC</td>
+                                                    <td>NERIO AMBONI</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UnC</td>
+                                                    <td>MARLENE TERESINHA STROKA</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNESC</td>
+                                                    <td>MARCELO FELDHAUS</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIARP</td>
+                                                    <td>JOLMAR LUIZ HAWERROTH</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIBAVE</td>
+                                                    <td>LEONARDO DE PAULA MARTINS</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIDAVI</td>
+                                                    <td>PATRÍCIA PASQUALINI PHILIPPI</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIPLAC</td>
+                                                    <td>ALEXANDRE TRIPOLI VENÇÃO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNISUL</td>
+                                                    <td>ROBERTO IUNSKOVSKI</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNISUL</td>
+                                                    <td>RODRIGO DA SILVA ALVES</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIVALI</td>
+                                                    <td>CARLOS ALBERTO TOMELIN</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIVILLE</td>
+                                                    <td>PATRÍCIA ESTHER FENDRICH MAGRI</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNOCHAPECÓ</td>
+                                                    <td>SILVANA MURARO WILDNER</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>USJ</td>
+                                                    <td>RENATA SILVA</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4" >
+                                        <table style="text-align: left;" class="table table-hover table-striped table-bordered table-condensed">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2" style="font-weight: bold; font-size: 14px">
+                                                        Pesquisa e Pós Graduação
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-weight: bold; padding-right: 80px">IES</th>
+                                                    <th style="font-weight: bold">Representante</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <tr>
+                                                    <td>FURB</td>
+                                                    <td>RICARDO BITTENCOURT</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNOCHAPECÓ</td>
+                                                    <td>VANESSA CORRALO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ACAFE</td>
+                                                    <td>PAULO IVO KOEHNTOPP</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>CATÓLICA</td>
+                                                    <td>MAIKON CRISTIANO GLASENAPP</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UDESC</td>
+                                                    <td>ANTONIO CARLOS VARGAS SANT ANNA</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UDESC</td>
+                                                    <td>FÁBIO NAPOLEÃO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UnC</td>
+                                                    <td>GABRIEL BONETTO BAMPI</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UnC</td>
+                                                    <td>ITAIRA SUSKO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UnC</td>
+                                                    <td>IVANIR SALETE TECHIO DA SILVA</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNESC</td>
+                                                    <td>INDIANARA REYNAUD TORETI BECKER</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNESC</td>
+                                                    <td>OSCAR RUBEM KLEGES MONTEDO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIARP</td>
+                                                    <td>ALMIR GRANEMANN DOS REIS</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIBAVE</td>
+                                                    <td>DIMAS AILTON ROCHA</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIDAVI</td>
+                                                    <td>CHARLES ROBERTO HASSE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIFEBE</td>
+                                                    <td>EDINEIA PEREIRA DA SILVA BETTA</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIPLAC</td>
+                                                    <td>CRISTINA KEIKO YAMAGUCHI</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNISUL</td>
+                                                    <td>ANA REGINA DUTRA</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNISUL</td>
+                                                    <td>HERCULES NUNES DE ARAUJO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIVALI</td>
+                                                    <td>ROGÉRIO CORREA</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIVILLE</td>
+                                                    <td>THEREZINHA MARIA NOVAIS DE OLIVEIRA</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNOESC</td>
+                                                    <td>FÁBIO LAZZAROTTI</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>USJ</td>
+                                                    <td>SANDRA MARANGONI</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="col-sm-4" >
+                                        <table style="text-align: left;" class="table table-hover table-striped table-bordered table-condensed">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2" style="font-weight: bold; font-size: 14px">
+                                                        Tecnologia e Informação
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-weight: bold; padding-right: 80px">IES</th>
+                                                    <th style="font-weight: bold">Representante</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <tr>
+                                                    <td>UNOCHAPECÓ</td>
+                                                    <td>LISSANDRO HOFFMEISTER</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>FURB</td>
+                                                    <td>ANA LUCIA ANACLETO REIS</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ACAFE</td>
+                                                    <td>PAULO IVO KOEHNTOPP</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ACAFE</td>
+                                                    <td>RAFAEL EIDT</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>CATÓLICA</td>
+                                                    <td>LUCAS VIAPIANA</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UDESC</td>
+                                                    <td>MARCOS VINICIUS LINHARES A</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UnC</td>
+                                                    <td>MAXIMILIANO PEZZIN</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNESC</td>
+                                                    <td>ROGÉRIO ANTÔNIO CASAGRANDE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIARP</td>
+                                                    <td>SIDNEI ROBERTO DUARTE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIBAVE</td>
+                                                    <td>PAULO ANDRÉ DONEDA JUNG</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIDAVI</td>
+                                                    <td>MARCONDES MAÇANEIRO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIFEBE</td>
+                                                    <td>WILLIAM FERNANDES MOLINA</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIPLAC</td>
+                                                    <td>JOSÉ LUIS CARRARO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNISUL</td>
+                                                    <td>FABRÍCIO DA SILVA ATTANÁSIO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNISUL</td>
+                                                    <td>TATIANE DOS SANTOS LEAL</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIVALI</td>
+                                                    <td>MÁRIO TAVARES JUNIOR</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIVILLE</td>
+                                                    <td>FRANCIS MACHADO TEIXEIRA</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNOESC</td>
+                                                    <td>KURT SCHNEIDER</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>USJ</td>
+                                                    <td>MARCIO CRISTIANO DA LUZ</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>      
+                                    </div>
+
+                                    <div class="col-sm-4" >
+                                        <table style="text-align: left;" class="table table-hover table-striped table-bordered table-condensed">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2" style="font-weight: bold; font-size: 14px">
+                                                        Inovação
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-weight: bold; padding-right: 80px">IES</th>
+                                                    <th style="font-weight: bold">Representante</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>ACAFE</td>
+                                                    <td>PAULO IVO KOEHNTOPP</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>CATÓLICA</td>
+                                                    <td>MAURÍCIO HENNEING</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>FURB</td>
+                                                    <td>RODRIGO DOS SANTOS CARDOSO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UDESC</td>
+                                                    <td>CARLA REGINA MAGAGNIN ROCZANSKI</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UnC</td>
+                                                    <td>MAXIMILIANO PEZZIN</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNESC</td>
+                                                    <td>PAULO FERNANDO PRIANTE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNESC</td>
+                                                    <td>EVÂNIO RAMOS NICOLEIT</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIARP</td>
+                                                    <td>IVANETE SCHNEIDER HAHN</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIDAVI</td>
+                                                    <td>CHARLES ROBERTO HASSE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIDAVI</td>
+                                                    <td>MARCONDES MAÇANEIRO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIVILLE</td>
+                                                    <td>MARCELO LEANDRO DE BORBA</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIFEBE</td>
+                                                    <td>SERGIO RUBENS FANTINI</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIPLAC</td>
+                                                    <td>ALEXANDRE TRIPOLI VENÇÃO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIPLAC</td>
+                                                    <td>CRISTINA KEIKO YAMAGUCHI</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNISUL</td>
+                                                    <td>FABRÍCIO DA SILVA ATTANÁSIO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIVALI</td>
+                                                    <td>JANAÍNA LORENZI TOMIO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIVALI</td>
+                                                    <td>ROGÉRIO CORREA</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNOCHAPECÓ</td>
+                                                    <td>RODRIGO BARICHELLO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNOESC</td>
+                                                    <td>JÉSSICA MOTA</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>USJ</td>
+                                                    <td>ALCIDES FERNANDES ANDUJAR</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <table style="text-align: left" class="table table-hover table-striped table-bordered table-condensed">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2" style="font-weight: bold; font-size: 14px">
+                                                        Internacionalização
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-weight: bold; padding-right: 80px">IES</th>
+                                                    <th style="font-weight: bold">Representante</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>ACAFE</td>
+                                                    <td>PAULO IVO KOEHNTOPP</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>FURB</td>
+                                                    <td>DAVID COLIN MORTON BILSLAND</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>CATÓLICA</td>
+                                                    <td>MAIKON CRISTIANO GLASENAPP</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UDESC</td>
+                                                    <td>JULIA VIEIRA RODRIGUES BITTENCOURT</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UnC</td>
+                                                    <td>ABRIEL BONETTO BAMPI</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNESC</td>
+                                                    <td>EMILIO LUIZ STRECK</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIARP</td>
+                                                    <td>LEVI HULSE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIBAVE</td>
+                                                    <td>ISMAEL DAGOSTIN GOMES</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIDAVI</td>
+                                                    <td>JEANCARLO VISENTAINER</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIFEBE</td>
+                                                    <td>RAFAELA BOHACZUCK VENTURELLI KNOP</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIPLAC</td>
+                                                    <td>KAIO HENRIQUE COELHO AMARANTE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIPLAC</td>
+                                                    <td>STÉFANO FRIZZO STEFENON&nbsp</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNISUL</td>
+                                                    <td>JOSÉ BALTAZAR S. O. DE ANDRADE GUERRA</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIVALI</td>
+                                                    <td>MARIA ELIZABETH DA COSTA GAMA</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIVILLE</td>
+                                                    <td>THAIS CRISTINA DA ROCHA</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNOESC</td>
+                                                    <td>KALINE ZENI</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNOCHAPECÓ</td>
+                                                    <td>LIANA SONZA DOS SANTOS</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>USJ</td>
+                                                    <td>ANA CRISTINA OLIVEIRA DA SILVA HOFFMANN</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="col-sm-4" >
+                                        <table style="text-align: left;" class="table table-hover table-striped table-bordered table-condensed">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2" style="font-weight: bold; font-size: 14px">
+                                                        Extensão
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-weight: bold; padding-right: 80px">IES</th>
+                                                    <th style="font-weight: bold">Representante</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>UNIVILLE</td>
+                                                    <td>YONÁ DA SILVA DALONSO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIVILLE</td>
+                                                    <td>MARIA INÊS SIQUEIRA ARAÚJO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ACAFE</td>
+                                                    <td>PAULO IVO KOEHNTOPP</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>CATÓLICA</td>
+                                                    <td>MAIKON CRISTIANO GLASENAPP</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>FURB</td>
+                                                    <td>OKLINGER MANTAVANELI JUNIOR</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UDESC</td>
+                                                    <td>MAYCO MORAES NUNES</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UnC</td>
+                                                    <td>ELISETE ANA BARP</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNESC</td>
+                                                    <td>FERNANDA GUGLIELMI FAUSTINI</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNESC</td>
+                                                    <td>>INDIANARA REYNAUD TORETI BECKER</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIARP</td>
+                                                    <td>ROSANA D´AGOSTINI</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIBAVE</td>
+                                                    <td>VANESSA ISA CATANEO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIDAVI</td>
+                                                    <td>ALDO KAESTNER</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIFEBE</td>
+                                                    <td>LUANA F. FERNANDES ALVES</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIPLAC</td>
+                                                    <td>SABRINA LOPES ERN</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNISUL</td>
+                                                    <td>RODRIGO DA SILVA ALVES</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNISUL</td>
+                                                    <td>MILENE PACHECO KINDERMANN</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIVALI</td>
+                                                    <td>ATTELA JENICHEN PROVESI</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIVALI</td>
+                                                    <td>EMANUELA C. ANDRADE LACERDA</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNOCHAPECÓ</td>
+                                                    <td>CLEUNICE ZANELLA</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNOESC</td>
+                                                    <td>JOVANI ANTONIO STEFFANI</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>USJ</td>
+                                                    <td>JANINE PACHECO DA LUZ</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div> 
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- presidentes -->
+        <div id="dirigentes-modal" class="modal" tabindex="-1" style="z-index: 9999999999" role="dialog">
+            <div class="modal-dialog" role="document" style="font-size: 15px; width: 1024px">
+                <div class="modal-content">
+                    <div class="modal-header" style="text-align: center">
+                        <strong style="font-weight: bold;">Dirigentes</strong>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body row">
+
+                        <div class="col-lg-4" >
+                            <h3 style="font-weight: bold">Presidentes</h3>
+                            <br>
+
+                            <h4>
+                                Aristides Cimadon<br>
+                                <small>(UNOESC) – 2020</small>
+                            </h4>
+
+                            <h4>
+                                Claudio Alcides Jacoski <br>
+                                <small>(UNOCHAPECÓ) – 2019 – 2020</small>
+                            </h4>
+
+                            <h4>
+                                Günther Lother Pertschy<br>
+                                <small>(UNIFEBE) – 2018 – 2019</small>
+                            </h4>
+
+                            <h4>
+                                Sebastião Salésio Herdt<br>
+                                <small>(UNISUL) – 2016 – 2018</small>
+                            </h4>
+
+                            <h4>
+                                Aristides Cimadon<br>
+                                <small>(UNOESC) – 2014 – 2016</small>
+                            </h4>
+
+                            <h4>
+                                Mário Cesar dos Santos<br>
+                                <small>(UNIVALI) – 2012 – 2014</small>
+                            </h4>
+
+                            <h4>
+                                Viegand Eger<br>
+                                <small>(UNIDAVI) 2010 – 2011</small>
+                            </h4>
+
+                            <h4>
+                                Paulo Ivo Koehntopp<br>
+                                <small>(UNIVILLE) 2008 – 2010</small>
+                            </h4>
+
+                            <h4>
+                                Antônio Milioli Filho<br>
+                                <small>(UNESC) 2006 – 2008</small>
+                            </h4>
+
+                            <h4>
+                                Gaston Mário Cazamajou Bojarski<br>
+                                <small>(UnC) 2004 – 2006</small>
+                            </h4>
+
+                            <h4>
+                                Egon José Schramm<br>
+                                <small>(FURB) 2002 – 2004</small>
+                            </h4>
+
+                            <h4>
+                                Nara Maria Kuhn Gocks<br>
+                                <small>(UNIPLAC) 2000 – 2002</small>
+                            </h4>
+
+                            <h4>
+                                Jaime João Pasqualini<br>
+                                <small>(UNIDAVI) Maio de 2000</small>
+                            </h4>
+
+                            <h4>
+                                Luiz Carlos Luckmann<br>
+                                <small>(UNOESC) 1998 – 2000</small>
+                            </h4>
+
+                            <h4>
+                                Silvestre Heerdt<br>
+                                <small>(UNISUL) 1996 – 1998</small>
+                            </h4>
+
+                            <h4>
+                                Edison Villela<br>
+                                <small>(UNIVALI) 1990 – 1996</small>
+                            </h4>
+
+                            <h4>
+                                Lauro Ribas Zimmer<br>
+                                <small>(UDESC) 1979 – 1990</small>
+                            </h4>
+
+                            <h4>
+                                João Nicolau Carvalho<br>
+                                <small>(UDESC) 1976 – 1979</small>
+                            </h4>
+
+                            <h4>
+                                Osvaldo Dela Giustina<br>
+                                <small>(UNISUL) 1974 – 1976</small>
+                            </h4>
+
+                        </div>
+                        <div class="col-lg-4" >
+                            <h3 style="font-weight: bold">Vice-Presidentes</h3>
+                            <br>
+
+                            <h4>
+                                Luciane Bisognin Ceretta<br>
+                                <small>(UNESC) –  2020</small>
+                            </h4>
+
+                            <h4>
+                                Aristides Cimadon<br>
+                                <small>(UNOESC) –  2020</small>
+                            </h4>
+
+                            <h4>
+                                Claudio Alcides Jacoski<br>
+                                <small>(UNOCHAPECÓ) – 2018 – 2019</small>
+                            </h4>
+
+                            <h4>
+                                Günther Lother Pertschy<br>
+                                <small>(UNIFEBE) – 2016 – 2018</small>
+                            </h4>
+
+                            <h4>
+                                Sebastião Salésio Herdt<br>
+                                <small>(UNISUL) – 2014 – 2016</small>
+                            </h4>
+
+                            <h4>
+                                Aristides Cimadon<br>
+                                <small>(UNOESC) – 2012 – 2014</small>
+                            </h4>
+
+                            <h4>
+                                Mário Cesar dos Santos<br>
+                                <small>(UNIVALI) – 2010 – 2012</small>
+                            </h4>
+
+                            <h4>
+                                Viegand Eger<br>
+                                <small>(UNIDAVI) 2008 – 2010</small>
+                            </h4>
+
+                            <h4>
+                                Paulo Ivo Koehntopp<br>
+                                <small>(UNIVILLE) 2006 – 2008</small>
+                            </h4>
+
+                            <h4>
+                                Antônio Milioli Filho<br>
+                                <small>(UNESC) 2004 -2006</small>
+                            </h4>
+
+                            <h4>
+                                Gaston Mário Cazamajou Bojarski<br>
+                                <small>(UnC) 2002 – 2004</small>
+                            </h4>
+
+                            <h4>
+                                Egon José Schramm<br>
+                                <small>(FURB) 2000 – 2002</small>
+                            </h4>
+
+                            <h4>
+                                Jaime João Pasqualini<br>
+                                <small>(UNIDAVI) Abril de 2000</small>
+                            </h4>
+
+                            <h4>
+                                Luiz Carlos Luckmann<br>
+                                <small>(UNOESC) 1996 – 1998</small>
+                            </h4>
+
+                            <h4>
+                                Mércio Jacobsen<br>
+                                <small>(FURB) 1995 – 1996</small>
+                            </h4>
+
+                            <h4>
+                                Mário Fritsch<br>
+                                <small>(UnC/Mafra) 1992 – 1995</small>
+                            </h4>
+
+                            <h4>
+                                Nilson Thomé<br>
+                                <small>(UnC/Caçador) 1991 – 1992</small>
+                            </h4>
+
+
+                            <h4>
+                                Darci Fuga<br>
+                                <small>(UNOESC/Jba) 1990 – 1991</small>
+                            </h4>
+
+                            <h4>
+                                Edison Villela<br>
+                                <small>(UNIVALI) 1989 – 1990</small>
+                            </h4>
+
+                            <h4>
+                                Silvestre Heerdt<br>
+                                <small>(UNISUL) 1981 – 1989</small>
+                            </h4>
+
+                            <h4>
+                                Antônio Adolpho Maresh<br>
+                                <small>(UNOESC/Joaçaba) 1979 – 1981</small>
+                            </h4>
+
+                            <h4>
+                                Francisco Ansilie<br>
+                                <small>(UNOESC/Joaçaba) 1979</small>
+                            </h4>
+
+                            <h4>
+                                Hélio Roque Rubick<br>
+                                <small>(FEDAVI) 1976 – 1979</small>
+                            </h4>
+
+                            <h4>
+                                Ignácio Ricken<br>
+                                <small>(FURB) 1974 – 1976</small>
+                            </h4>
+
+
+                        </div>
+                        <div class="col-lg-4" >
+                            <h3 style="font-weight: bold">Secretários Executivos</h3>
+                            <br>
+
+                            <h4>
+                                Paulo Ivo Koehntopp<br>
+                                <small>(UNIVILLE) 2014</small>
+                            </h4>
+
+                            <h4>
+                                Darcy Laske<br>
+                                <small>(UNOESC) 1999 – 2014</small>
+                            </h4>
+
+                            <h4>
+                                Sebastião Salésio Herdt<br>
+                                <small>(UNISUL) 1996 – 1999</small>
+                            </h4>
+
+                            <h4>
+                                Fernando F. de Aquino<br>
+                                <small>(UDESC) 1986 – 1996</small>
+                            </h4>
+
+                            <h4>
+                                Rogério Braz da Silva<br>
+                                <small>(UDESC) 1979 – 1986</small>
+                            </h4>
+
+                            <h4>
+                                Raimundo Zumblick<br>
+                                <small>(UDESC) 1977 – 1979</small>
+                            </h4>
+
+                            <h4>
+                                Marcílio Dias dos Santos<br>
+                                <small>(UDESC) 1974 – 1977</small>
+                            </h4>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- contato -->
         <div id="contact" class="section-cotent">
@@ -630,43 +1888,6 @@
                             $('.Vestibular').load("paginas/eventos.php?CATEGORIA=Vestibular&LIMIT=4");
                             $('.Seletivo').load("paginas/eventos.php?CATEGORIA=Seletivo&LIMIT=4");
                             $('.Concurso').load("paginas/eventos.php?CATEGORIA=Concurso&LIMIT=4");
-
-                            $(".camara, #sobre, #memoria").click(function () {
-                                var pagina = $(this).data('valor');
-
-                                $('#noticia').hide();
-                                $('#vestibular').hide();
-                                $('#seletivo').hide();
-                                $('#concurso').hide();
-                                $('#instituicao').hide();
-                                $('#ies-img').hide();
-                                $('#acafe').hide();
-                                $('#camara-section').show();
-                                $('#camara-section').load("paginas/" + pagina + ".html");
-                                jQuery('html,body').animate({
-                                    scrollTop: ($("#camara-section").offset().top) - 100
-                                }, 'slow');
-
-                            });
-
-                            $(".main-header a").click(function () {
-
-                                var $ir = $(this).attr('href');
-
-                                if ($ir != '#') {
-                                    $('#noticia').show();
-                                    $('#vestibular').show();
-                                    $('#seletivo').show();
-                                    $('#concurso').show();
-                                    $('#instituicao').show();
-                                    $('#ies-img').show();
-                                    $('#acafe').show();
-                                    $('#camara-section').hide();
-                                    jQuery('html,body').animate({
-                                        scrollTop: ($($ir).offset().top) - 100
-                                    }, 'slow');
-                                }
-                            });
 
                         });
 

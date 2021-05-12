@@ -3,15 +3,10 @@ ini_set('display_errors', 1);
 ini_set('display_startup_erros', 1);
 error_reporting(E_ALL);
 
-
-
-
 require_once '../admin/config.php';
 require_once '../admin/libs/Conexao.php';
 
 $pdo = new Conexao();
-//pr($pdo);
-//categoria
 
 if ($_GET['CATEGORIA'] == 'Notícia' && DB_HOST == '10.0.0.3') {
     $_GET['CATEGORIA'] = 'Noticia';
@@ -73,11 +68,17 @@ if (isset($_GET['ID_EVENTO'])) {
             $attr = " onclick='noticiaDetalhe($evento[ID_EVENTO])' ";
             $cssHeigth = ' height: 66px ';
         }
+
+        $img = "admin/arquivos/$evento[IMAGEM]";
+        if (!file_exists("../$img")) {
+            $img = "admin/arquivos/9.png";
+        }
+        
         ?>
         <a class="col-md-3 col-sm-4" style="cursor: pointer; font-weight: bold; margin-top: 50px; " title="<?= $evento['TITULO'] ?>" <?= $attr ?> >
             <div class="team-member" style="text-align: center">
                 <div class="member-img">
-                    <img style="max-height: 200px; width: 255px; "  src="admin/arquivos/<?= $evento['IMAGEM'] ?>">
+                    <img style="max-height: 200px; width: 255px; "  src="<?= $img ?>">
                 </div>
                 <center>
                     <div class="inner-content" style=" background: whitesmoke;
