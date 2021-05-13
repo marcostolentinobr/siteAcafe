@@ -209,51 +209,73 @@
                     <h2>Vestibulares</h2>
                     <span></span>
                 </div> 
-                <br>
-                <table class="table table-hover table-striped table-bordered table-condensed">
-                    <thead style=" font-weight: bold; font-size: 20px">
-                        <tr>
-                            <th colspan="3">Previsão conforme portaria <a target="_blank" href="admin/arquivos/2020_09_portaria.jpg">09/2020</a></th>
-                        </tr>
-                        <tr>
-                            <th>Etapas</th>
-                            <th>Inverno 2021</th>
-                            <th>Verão 2022</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Inscrição</td>
-                            <td>06/04 a 04/05</td>
-                            <td>03/09 a 03/10</td>
-                        </tr>    
-                        <tr>
-                            <td>Pagamento</td>
-                            <td>Até 05/05</td>
-                            <td>Até 04/10</td>
-                        </tr>    
-                        <tr>
-                            <td>Confirmação do local de prova</td>
-                            <td>A partir de 25/05</td>
-                            <td>A partir de 09/11</td>
-                        </tr>    
-                        <tr>
-                            <td>Aplicação da prova</td>
-                            <td>13/06</td>
-                            <td>21/11</td>
-                        </tr>    
-                        <tr>
-                            <td>Resultado</td>
-                            <td>29/06</td>
-                            <td>07/12</td>
-                        </tr>    
-                        <tr>
-                            <td style="font-weight: bold">Livros (Obras literárias)</td>
-                            <td><a target="_blank" href="https://acafe.org.br/concurso/vestibular/2021/2/site">Acesse o site</a></td>
-                            <td><a target="_blank" href="https://acafe.org.br/concurso/vestibular/2022/1/site">Acesse o site</a></td>
-                        </tr>    
-                    </tbody>
-                </table>
+                <div>
+                    <a href="#" data-toggle="modal" data-target="#previsao-modal">Previsão dos próximos vestibulares</a>
+                </div>
+
+                <!-- comunicado -->
+                <div id="previsao-modal" class="modal" tabindex="-1" style="z-index: 9999999999" role="dialog">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content" style="font-size: 15px">
+                            <div class="modal-header" style="text-align: center">
+                                <strong style="font-weight: bold;">Previsão conforme portaria</strong>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <table class="table table-hover table-striped table-bordered table-condensed">
+                                    <thead style=" font-weight: bold; font-size: 20px">
+                                        <tr>
+                                            <th colspan="3">Previsão conforme portaria <a target="_blank" href="admin/arquivos/2020_09_portaria.jpg">09/2020</a></th>
+                                        </tr>
+                                        <tr>
+                                            <th>Etapas</th>
+                                            <th>Inverno 2021</th>
+                                            <th>Verão 2022</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Inscrição</td>
+                                            <td>06/04 a 04/05</td>
+                                            <td>03/09 a 03/10</td>
+                                        </tr>    
+                                        <tr>
+                                            <td>Pagamento</td>
+                                            <td>Até 05/05</td>
+                                            <td>Até 04/10</td>
+                                        </tr>    
+                                        <tr>
+                                            <td>Confirmação do local de prova</td>
+                                            <td>A partir de 25/05</td>
+                                            <td>A partir de 09/11</td>
+                                        </tr>    
+                                        <tr>
+                                            <td>Aplicação da prova</td>
+                                            <td>13/06</td>
+                                            <td>21/11</td>
+                                        </tr>    
+                                        <tr>
+                                            <td>Resultado</td>
+                                            <td>29/06</td>
+                                            <td>07/12</td>
+                                        </tr>    
+                                        <tr>
+                                            <td style="font-weight: bold">Livros (Obras literárias)</td>
+                                            <td><a target="_blank" href="https://acafe.org.br/concurso/vestibular/2021/2/site">Acesse o site</a></td>
+                                            <td><a target="_blank" href="https://acafe.org.br/concurso/vestibular/2022/1/site">Acesse o site</a></td>
+                                        </tr>    
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="row" style="margin: 0; padding: 0">
                     <div class="our-team Vestibular" style="margin: 0; padding: 0">
                         <!-- local dos itens -->
@@ -408,10 +430,19 @@
         <!-- acafe -->
         <div id="acafe" class="section-cotent">
             <div class="container">
-                <div class="title-section text-center">
+                <div class="title-section text-center" style="margin-bottom: 10px;">
                     <h2>ACAFE</h2>
                     <span></span>
                 </div>
+                <div style="text-align: center; margin-bottom: 20px">
+                    <a href="#" data-toggle="modal" data-target="#conselhos-modal">Conselhos</a> | 
+                    <a href="#" data-toggle="modal" data-target="#camara-modal">Câmaras</a> | 
+                    <a target="_blank" href="documentos/estatuto.pdf">Estatuto</a> | 
+                    <a href="#" data-toggle="modal" data-target="#numeros-modal">Números ACAFE</a> | 
+                    <a href="#comunitarias">Ações comunitárias</a> |
+                    <a href="#dirigentes">Memória/Dirigentes</a>
+                </div>
+
                 <div class="row">
 
                     <!-- sobre -->
@@ -425,6 +456,7 @@
                                 criadas no Estado de Santa Catarina por lei dos poderes públicos estaduais e municipais. 
                                 O objetivo desta união é promover o intercâmbio administrativo, técnico e científico 
                                 entre as Instituições de Educação Superior.
+                                <a href="#" data-toggle="modal" data-target="#acafe-modal">Leia mais</a>
                             </div>
                         </div> 
                     </div> 
@@ -504,16 +536,52 @@
 
                 </div>
 
-                <div class="row">
-                    <br>
-                    <a href="#" data-toggle="modal" data-target="#acafe-modal">Mais sobre</a> |
-                    <a href="#" data-toggle="modal" data-target="#conselhos-modal">Conselhos</a> | 
-                    <a href="#" data-toggle="modal" data-target="#camara-modal">Câmaras</a> | 
-                    <a target="_blank" href="documentos/estatuto.pdf">Estatuto</a>
+                <div class="row" id="comunitarias" style="margin-top: 20px">
+                    <div class="col-sm-12">
+                        <h4 class="widget-title">Ações Comunitárias</h4>
+                        <p>
+                            Na busca do desenvolvimento das microrregiões do estado de Santa Catarina, as IES 
+                            filiadas à ACAFE, cumprindo sua função social, desenvolvem, sem ônus para os 
+                            beneficiários, programas e projetos de assistência à comunidade, contribuindo para 
+                            a melhoria da qualidade de vida, inclusão social e construção da cidadania.
+                        </p>
+                    </div>
+                    <div class="col-sm-6">
+                        <br>
+                        <p>
+                            Em 2019 foram beneficiadas mais de 1,1 (um milhão e cem mil) pessoas, nas 
+                            seguintes áreas:
+                        </p>
+                        <br>
 
+                        <p style="font-weight: bold; font-size: 15px">
+                            Pessoas atendidas por serviços de saúde:<br>
+                            <small>581.592</small>
+                        </p>
+                        <br>
+
+                        <p style="font-weight: bold; font-size: 15px">
+                            Pessoas atendidas em assistência jurídica:<br>
+                            <small>117.079</small>
+                        </p>
+                        <br>
+
+                        <p style="font-weight: bold; font-size: 15px">
+                            Pessoas atendidas em programa de educação comunitária ou promoção sociocultura:<br>
+                            <small>1.415.028</small>
+                        </p>
+                        
+                        <small style="display: block; margin: 10px 0">Dados de 2019 exceto UDESC</small>
+
+                    </div>
+                    <div class="col-sm-6" style="padding: 0 5px; ">
+                        <br>
+                        <iframe style="width: 100%; height: 300px" data-aos="fade-left" data-aos-delay="100"  style="border: 0" 
+                                src="https://www.youtube.com/embed/f5Xo63qAQ1M?autoplay=1">
+                        </iframe>
+                    </div>
                 </div>
-
-                <div class="row">
+                <div class="row" id="dirigentes">
                     <br>
                     <h4 class="widget-title">Memória</h4>
                     <p>
@@ -570,6 +638,81 @@
         <!-- fim acafe -->
 
         <!-- comunicado -->
+        <div id="numeros-modal" class="modal" tabindex="-1" style="z-index: 9999999999" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content" style="font-size: 15px">
+                    <div class="modal-header" style="text-align: center">
+                        <strong style="font-weight: bold;">Acafe em números</strong>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p style="font-weight: bold; font-size: 15px">
+                                    Instituições<br>
+                                    <small>15</small>
+                                </p>
+                                <hr>
+                                <p style="font-weight: bold; font-size: 15px">
+                                    Alunos<br>
+                                    <small>117.573</small>
+                                </p>
+                                <hr>
+                                <p style="font-weight: bold; font-size: 15px">
+                                    Professores<br>
+                                    <small>6.519</small>
+                                </p>
+                                <hr>
+                                <p style="font-weight: bold; font-size: 15px">
+                                    Funcionários<br>
+                                    <small>4.977</small>
+                                </p>
+                                <hr>
+                                <p style="font-weight: bold; font-size: 15px">
+                                    Cursos<br>
+                                    <small>1.359</small>
+                                </p>
+
+                            </div>
+                            <div class="col-sm-6">
+                                <p style="font-weight: bold; font-size: 15px">
+                                    Empresas Incubadas<br>
+                                    <small>151</small>
+                                </p>
+                                <hr>
+                                <p style="font-weight: bold; font-size: 15px">
+                                    Grupos de Pesquisa<br>
+                                    <small>645</small>
+                                </p>
+                                <hr>
+                                <p style="font-weight: bold; font-size: 15px">
+                                    Projetos de Pesquisa<br>
+                                    <small>4.112</small>
+                                </p>
+                                <hr>
+                                <p style="font-weight: bold; font-size: 15px">
+                                    Laboratórios<br>
+                                    <small>2.130</small>
+                                </p>
+                                <hr>
+                                <p style="font-weight: bold; font-size: 15px">
+                                    Alunos com Bolsa<br>
+                                    <small>19.738</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row"><div class="col-sm-12"><hr>Dados de 2019 exceto UDESC</div></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- comunicado -->
         <div id="conselhos-modal" class="modal" tabindex="-1" style="z-index: 9999999999" role="dialog">
             <div class="modal-dialog modal-lg" role="document" style="font-size: 15px; width: 1024px">
                 <div class="modal-content" >
@@ -590,16 +733,19 @@
                                     Prof. Dr. Claudio Alcides Jacoski<br>
                                     <small>Reitor da UNOCHAPECÓ</small>
                                 </h4>
+                                <hr>
 
                                 <h4>
                                     Prof. MSc. Márcia Cristina Sardá Espíndola<br>
                                     <small>Reitora da FURB</small>
                                 </h4>
+                                <hr>
 
                                 <h4>
                                     Prof. MSc. Rosemari Glatz<br>
                                     <small>Reitora da UNIFEBE</small>
                                 </h4>
+                                <hr>
 
                                 <h4>
                                     Prof. Dr. Valdir Cechinel Filho<br>
@@ -609,7 +755,6 @@
                             </div>
 
                             <div class="col-lg-6" >
-                                <br>
                                 <h1 style="font-weight: bold">Conselho Fiscal</h1>
                                 <br>
 
@@ -669,7 +814,7 @@
                         </div>
 
                     </div>
-                    <div class="modal-footer">
+                    <div class="modal-footer" style="text-align: left">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                     </div>
                 </div>
@@ -898,10 +1043,6 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>IES</td>
-                                                    <td>Representante</td>
-                                                </tr>
                                                 <tr>
                                                     <td>UNOESC</td>
                                                     <td>LINDAMIR GADLER</td>
@@ -1473,8 +1614,7 @@
                         </div>
 
                     </div>
-                    <div class="modal-footer">
-                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    <div class="modal-footer" style="text-align: left">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                     </div>
                 </div>
@@ -1844,12 +1984,13 @@
         <div class="site-footer" style="margin-top: 20px; padding: 10px">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-11 col-sm-10 col-xs-6">
+                    <div class="col-sm-10">
+                        <a style="display: inline; text-decoration: none" href="#" data-toggle="modal" data-target="#privacidade-modal">Política de privacidade</a> | 
                         <a style="display: inline; text-decoration: none" target="_blank" href="https://acafe.org.br/portal">Portais</a> |
                         <a style="display: inline; text-decoration: none" target="_blank" href="https://webmail.acafe.org.br">Webmail</a>
-                        <small class="hidden-sm hidden-xs" style="font-size: 10px">Sistema ACAFE &copy; 2021</small>
+                        <small style="font-size: 10px; display: block">Sistema ACAFE &copy; 2021</small>
                     </div>
-                    <div class="col-md-1 col-sm-1 col-xs-6">
+                    <div class="col-sm-2 hidden-xs">
                         <div class="go-top">
                             <a href="#" id="go-top">
                                 <i class="fa fa-angle-up"></i>
@@ -1896,10 +2037,114 @@
         </style>
         <div class="box-cookies hide">
             <p class="msg-cookies">
-                Ao navegar, você aceita que usamos cookies e tecnologias semelhantes de acordo com nossa 
-                <a target="_blank" href="#">Política de privacidade</a>
+                Ao navegar, você aceita que usamos cookies e tecnologias semelhantes.
+                <a href="#" data-toggle="modal" data-target="#privacidade-modal">Mais informações.</a>
             </p>
             <button class="btn-cookies">Entendi</button>
+        </div>
+
+        <!-- comunicado -->
+        <div id="privacidade-modal" class="modal" tabindex="-1" style="z-index: 9999999999" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content" style="font-size: 15px">
+                    <div class="modal-header" style="text-align: center">
+                        <strong style="font-weight: bold;">Política de privacidade e proteção de dados</strong>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>                        
+                            Nossa política de privacidade e proteção de dados pessoais leva em consideração todos os
+                            princípios da Lei 13.709/18, em especial aquilo que é relevante para a sua inscrição e
+                            matrícula neste concurso vestibular com destaque para a transparência e não discriminação,
+                            adequação, necessidade e finalidade, livre acesso e qualidade dos dados, segurança e
+                            prevenção, responsabilização e prestação de contas.
+                        </p>
+                        <br>
+
+                        <p>
+                            O tratamento de seus dados pessoais se dará preponderantemente para o cumprimento de
+                            contrato celebrado com o Sistema ACAFE e sempre que houver alguma outra base legal que
+                            implique em novos potenciais usos, você será amplamente informado.
+                        </p>
+                        <br>
+
+                        <p>
+                            Assim, os seus dados serão coletados mediante fornecimento direto no ato da inscrição
+                            (cadastro, matrícula, fornecimento ou requerimentos diversos perante o Sistema ACAFE) e
+                            coletados indiretamente através do preenchimento de ficha de inscrição ou cadastro,
+                            emissão de boleto bancário, apresentação de documentos para comprovação de sua
+                            identidade, acesso aos sistemas e portal do Sistema ACAFE e divulgação de lista de
+                            aprovados ou de excedentes.
+                        </p>
+                        <br>
+
+                        <p>
+                            Os seus dados pessoais serão utilizados para situações específicas e finalidades 
+                            prédeterminadas, como o cadastro geral, matrícula, confirmação de pagamento e fornecimento
+                            de informações. Seus dados serão compartilhados com as instituições de ensino superior
+                            para as quais você realizará o Concurso Vestibular, a fim de viabilizar plena divulgação do
+                            resultado, convocação de lista de excedentes e para que tais instituições cumpram
+                            obrigações legais perante o Ministério da Educação (MEC).
+                        </p>
+                        <br>
+
+                        <p>
+                            Seus dados pessoais também poderão ser compartilhados com parceiros terceirizados
+                            (fornecedores ou subcontratados) que tratem os dados pessoais sob a nossa
+                            responsabilidade. Neste caso, garantimos que tais empresas cumprirão os mesmos
+                            requisitos de conformidade, ética e segurança que o Sistema ACAFE. Em decorrência de uma
+                            obrigação legal, os seus dados pessoais podem ser compartilhados com autoridades
+                            públicas, em especial com o MEC e com a finalidade de cumprir políticas públicas, realização
+                            de estudos por órgão de pesquisa, para exercício regular de direito em processo judicial,
+                            administrativo ou arbitral, para proteção da vida, incolumidade física e para o atendimento a 
+                            interesses legítimos, respeitados em todos os casos os seus direitos individuais enquanto
+                            titular.
+                        </p>
+                        <br>
+
+                        <p>
+                            No caso de crianças e adolescentes que eventualmente estejam inscritos no Concurso
+                            Vestibular, será necessária a sua representação por um responsável legal, o qual prestará
+                            informações e deverá consentir com as diretrizes estabelecidas por este Edital, em especial
+                            com o compartilhamento dos dados pessoais com as instituições de ensino superior para o
+                            qual o exame será realizado, havendo anuência expressa e clara para a divulgação do nome
+                            da criança e do adolescente em lista de aprovados ou excedentes.
+                        </p>
+                        <br>
+
+                        <p>
+                            Durante o Concurso Vestibular e no momento oportuno, você pode ser solicitado a fornecer
+                            as seguintes informações, as quais são necessárias para o cumprimento do contrato,
+                            realização do exame e integração de matrícula perante a instituição de ensino superior:
+                            nome completo, nacionalidade, estado civil, naturalidade, endereço, telefone, e-mail,
+                            gênero, raça, laudo PcD (quando for o caso), data de nascimento, RG, CPF, foto, identificação
+                            datiloscópica e responsável legal (quando for o caso).
+                        </p>
+                        <br>
+
+                        <p>
+                            Todos os dados pessoais cujo tratamento é realizado pelo Sistema ACAFE serão mantidos em
+                            base de dados própria cujo acesso é protegido por login e senha, criptografia e acessível
+                            somente aos funcionários com nível de autorização próprio.
+                        </p>
+                        <br>
+
+                        <p>
+                            Qualquer requisição relativa aos seus direitos enquanto titular de dados pessoais, tais como
+                            a confirmação e acesso, correção, anonimização, bloqueio ou eliminação, portabilidade,
+                            compartilhamento e oposição, conforme o caso, assim como maiores informações sobre a
+                            estruturação da nossa política de tratamento de dados pessoais, prazos de retenção e bases
+                            legais poderá ser requerida diretamente para nosso Encarregado de Proteção de Dados
+                            Pessoais em lgpd@acafe.org.br.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <script src="libs/bootstrap/js/bootstrap.min.js"></script>
