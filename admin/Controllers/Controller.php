@@ -8,8 +8,8 @@ class Controller {
     protected $arquivoForm;
     protected $botaoFormulario = true;
     protected $listarMostrar = true;
-    protected $sistemaLargura = 800;
-    protected $formularioLargura = 400;
+    protected $sistemaLargura = 1000;
+    protected $formularioLargura = 500;
     protected $mostrarDescricaoAcao = true;
     protected $acaoDescricao = 'Incluir';
     protected $dado;

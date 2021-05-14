@@ -24,7 +24,7 @@ if (isset($_GET['order'])) {
                        href="<?= URL . "Evento/detalhe/" . $dado['ID_EVENTO'] ?>"
                        title="<?= $dado['TITULO'] ?>"
                        >
-                           <?= reticencias($dado['TITULO'], 22) ?>
+                           <?= reticencias($dado['TITULO'], 38) ?>
                     </a>
                     <br>
                     <small>
