@@ -45,7 +45,7 @@ class Evento extends Controller {
                 $arqNome = $chave . "_interno.$extencao";
                 $arq_local = RAIZ . "/arquivos/$arqNome";
                 move_uploaded_file($ARQ['tmp_name'][$ind], $arq_local);
-            }
+    }
         }
     }
 
@@ -63,7 +63,7 @@ class Evento extends Controller {
         //TEXTO 
         $this->dado['TEXTO'] = campo($_POST['TEXTO']);
         $this->campoValidacao('TEXTO', 8000);
-
+        
         //TEXTO 
         $this->dado['IMAGEM_APARECER_DETALHE'] = campo($_POST['IMAGEM_APARECER_DETALHE']);
         $this->campoValidacao('IMAGEM_APARECER_DETALHE', 1);
