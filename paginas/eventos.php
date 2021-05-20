@@ -42,21 +42,26 @@ $EVENTO = $pdo->getListar($sql, $limit);
 
 if (isset($_GET['ID_EVENTO'])) {
     $EVENTO = $EVENTO[0];
+
+    $img_path = pathinfo($EVENTO['IMAGEM']);
+    $img_interno = "../admin/arquivos/$img_path[filename]_interno.$img_path[extension]";
     ?>
-    <center>
-        <h1 style="font-weight: bold; font-size: 30px; line-height: 35px"><?= $EVENTO['TITULO'] ?></h1>
-        <br>
+    <h1 style="font-weight: bold; font-size: 30px; line-height: 35px; text-align: center"><?= $EVENTO['TITULO'] ?></h1>
+    <br>
+    <div style="border: 0px solid; text-align: left; font-size: 15px">    
         <? if ($EVENTO['IMAGEM_APARECER_DETALHE'] != 'N') { ?>
             <img style='max-width: 255px; max-height: 200px' src='admin/arquivos/<?= $EVENTO['IMAGEM'] ?>' ><br> 
+        <? } elseif (file_exists($img_interno)) { ?>
+            <img style="width: 100%" src='<?= str_replace('../', '', $img_interno) ?>' ><br> 
         <? } ?>
-        <div style="border: 0px solid; text-align: left; font-size: 15px">    
-            <small style="font-size: 10px"> 
-                Publicada em <?= dataFormatar($EVENTO['DATA_PUBLICACAO'], 'DM', false) ?>
-            </small>
-            <br><br>
-            <?= campo($EVENTO['TEXTO_TOTAL'], 'T') ?>
-        </div>
-        <BR>
+
+        <small style="font-size: 10px"> 
+            Publicada em <?= dataFormatar($EVENTO['DATA_PUBLICACAO'], 'DM', false) ?>
+        </small>
+        <br><br>
+        <?= campo($EVENTO['TEXTO_TOTAL'], 'T') ?>
+    </div>
+    <BR>
     </center>
     <?
 } else {

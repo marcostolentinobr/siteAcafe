@@ -33,6 +33,20 @@ class Evento extends Controller {
                 }
             }
         }
+
+        //Caso a ação tenha dado ok e tenha arquivo enviar o arquivo
+        if ($this->ok && @$_FILES['IMAGEM_INTERNA']['name'][0]) {
+
+            //Caso a ação tenha dado ok e tenha arquivo enviar o arquivo
+            $ARQ = @$_FILES['IMAGEM_INTERNA'];
+            $chave = coalesce(@$this->valorChave, $this->Model->ultimoInsertId());
+            foreach ($ARQ['name'] as $ind => $nome) {
+                $extencao = strtolower(pathinfo($nome, PATHINFO_EXTENSION));
+                $arqNome = $chave . "_interno.$extencao";
+                $arq_local = RAIZ . "/arquivos/$arqNome";
+                move_uploaded_file($ARQ['tmp_name'][$ind], $arq_local);
+            }
+        }
     }
 
     //DADOS
@@ -49,7 +63,7 @@ class Evento extends Controller {
         //TEXTO 
         $this->dado['TEXTO'] = campo($_POST['TEXTO']);
         $this->campoValidacao('TEXTO', 8000);
-        
+
         //TEXTO 
         $this->dado['IMAGEM_APARECER_DETALHE'] = campo($_POST['IMAGEM_APARECER_DETALHE']);
         $this->campoValidacao('IMAGEM_APARECER_DETALHE', 1);
@@ -63,12 +77,6 @@ class Evento extends Controller {
 
         return $this->dadosValidacao();
     }
-
-    /*
-      protected function executaPosAcao() {
-      $this->dado['IMAGEM'] = coalesce(@$this->dado['IMAGEM'], @$this->Model->getDados()['IMAGEM']);
-      }
-     */
 
     public function templateLista() {
         require __DIR__ . '/../Views/' . CLASSE . '/' . strtolower(CLASSE) . '-lista.php';

@@ -3,7 +3,7 @@
 class Model extends Conexao {
 
     protected $valorBuscar;
-    public $pagina_total = 8;
+    public $pagina_total = 9;
     public $buscarCampos = [];
     public $paginacao = true;
     public $valorChave = '';
