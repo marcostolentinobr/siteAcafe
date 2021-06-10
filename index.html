@@ -9,7 +9,7 @@
 
         <!--cache -->
         <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
-        <META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 jul 2006 01:01:07 GMT">
+        <META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 jul 2006 01:01:08 GMT">
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGQR6KTT4W"></script>
@@ -142,7 +142,7 @@
                 <!-- usar 1920x350px com a largura da arte centralizada no maximo de 992px -->
                 <li>
                     <a href="https://acafe.org.br/concurso/sua/2021/2/site" target="_blank">
-                        <img src="https://acafe.org.br/site/imagens/banner/sua-inscricao-212.png">
+                        <img src="https://acafe.org.br/site/imagens/banner/sua-preliminar-212.png">
                     </a>
                 </li>
                 <li>
@@ -155,6 +155,7 @@
         <!-- fim do carrocel -->
 
         <!-- comunicado -->
+		<!--
         <div id="comunicado" class="modal" tabindex="-1" style="z-index: 9999999999" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content" style="font-size: 15px">
@@ -194,6 +195,7 @@
                 </div>
             </div>
         </div>
+		-->
 
         <!-- notícias -->
         <div id="noticia" class="section-cotent" style="padding-top: 15px">
@@ -396,9 +398,11 @@
                     </a>
 
                     <!-- unisul -->
+					<!--
                     <a class="col-lg-2" target="_blank" href="http://unisul.br">
                         <img src="https://acafe.org.br/arquivos/logos/unisul.png">
                     </a>
+					-->
 
                     <!-- univali -->
                     <a class="col-lg-2" target="_blank" href="https://univali.br">
@@ -488,11 +492,11 @@
                                     </p>
                                     <br>
                                     <p>
-                                        Das 15 Fundações iniciais, mantenedoras de Instituições de Ensino Superior – IES 
-                                        isoladas, o Sistema ACAFE evoluiu para configurar, hoje, um conjunto de 16 IES, 
-                                        sendo 11 Universidades e 5 Centros Universitários. A ACAFE é uma sociedade civil 
-                                        sem fins lucrativos que congrega as fundações educacionais criadas no Estado de 
-                                        Santa Catarina por lei dos poderes públicos estaduais e municipais.
+                                        Das Fundações iniciais, mantenedoras de Instituições de Ensino Superior – IES isoladas, 
+										o Sistema ACAFE evoluiu para configurar, hoje, um conjunto de 15 IES, sendo 10 
+										Universidades e 5 Centros Universitários. A ACAFE é uma sociedade civil sem fins 
+										lucrativos que congrega as fundações educacionais criadas no Estado de Santa Catarina 
+										por lei dos poderes públicos estaduais e municipais.
                                     </p>
                                     <br>
                                     <p>
@@ -2137,7 +2141,7 @@
 
                         $(document).ready(function () {
 
-                            $('#comunicado').modal('toggle')
+                            //$('#comunicado').modal('toggle')
 
                             $('.Noticia').load("paginas/eventos.php?CATEGORIA=Notícia&LIMIT=4");
                             $('.Vestibular').load("paginas/eventos.php?CATEGORIA=Vestibular&LIMIT=4");
