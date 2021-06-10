@@ -44,24 +44,27 @@ if (isset($_GET['ID_EVENTO'])) {
     $EVENTO = $EVENTO[0];
 
     $img_path = pathinfo($EVENTO['IMAGEM']);
-    $img_interno = "../admin/arquivos/$img_path[filename]_interno.$img_path[extension]";
+    $img_interno = RAIZ . "/arquivos/$img_path[filename]_interno";
+    $img_interno = @array_values(mArquivosListar($img_interno, true))[0];
     ?>
-    <h1 style="font-weight: bold; font-size: 30px; line-height: 35px; text-align: center"><?= $EVENTO['TITULO'] ?></h1>
-    <br>
-    <div style="border: 0px solid; text-align: left; font-size: 15px">    
-        <? if ($EVENTO['IMAGEM_APARECER_DETALHE'] != 'N') { ?>
+    <center>
+        <h1 style="font-weight: bold; font-size: 30px; line-height: 35px"><?= $EVENTO['TITULO'] ?></h1>
+        <br>
+        <? if ($EVENTO['IMAGEM_APARECER_DETALHE'] != 'N') {
+            ?>
             <img style='max-width: 255px; max-height: 200px' src='admin/arquivos/<?= $EVENTO['IMAGEM'] ?>' ><br> 
-        <? } elseif (file_exists($img_interno)) { ?>
-            <img style="width: 100%" src='<?= str_replace('../', '', $img_interno) ?>' ><br> 
+        <? } elseif ($img_interno) {
+            ?>
+            <img style="width: 100%" src="<?= strstr($img_interno, 'admin/', false) ?>" ><br> 
         <? } ?>
-
-        <small style="font-size: 10px"> 
-            Publicada em <?= dataFormatar($EVENTO['DATA_PUBLICACAO'], 'DM', false) ?>
-        </small>
-        <br><br>
-        <?= campo($EVENTO['TEXTO_TOTAL'], 'T') ?>
-    </div>
-    <BR>
+        <div style="border: 0px solid; text-align: left; font-size: 15px">    
+            <small style="font-size: 10px"> 
+                Publicada em <?= dataFormatar($EVENTO['DATA_PUBLICACAO'], 'DM', false) ?>
+            </small>
+            <br><br>
+            <?= campo($EVENTO['TEXTO_TOTAL'], 'T') ?>
+        </div>
+        <BR>
     </center>
     <?
 } else {
@@ -78,7 +81,6 @@ if (isset($_GET['ID_EVENTO'])) {
         if (!file_exists("../$img")) {
             $img = "admin/arquivos/9.png";
         }
-        
         ?>
         <a class="col-md-3 col-sm-4" style="cursor: pointer; font-weight: bold; margin-top: 50px; " title="<?= $evento['TITULO'] ?>" <?= $attr ?> >
             <div class="team-member" style="text-align: center">
